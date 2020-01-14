@@ -5,12 +5,21 @@
 Scene::Scene() :
 	nb_sphere(0)
 {
-	AddSphere(SphereColor { Sphere(Vector3(1000, 0, 0), 940), Vector3(1,0,0) });
-	AddSphere(SphereColor{ Sphere(Vector3(-1000, 0, 0), 940), Vector3(1,0,0) });
-	AddSphere(SphereColor{ Sphere(Vector3(0, 1000, 0), 940), Vector3(0,1,0) });
+	
+	//AddSphere(SphereColor { Sphere(Vector3(1000, 0, 0), 940), Vector3(1,0,0) });
+	//AddSphere(SphereColor{ Sphere(Vector3(-1000, 0, 0), 940), Vector3(1,0,0) });
+	//AddSphere(SphereColor{ Sphere(Vector3(0, 1000, 0), 940), Vector3(0,1,0) });
 	AddSphere(SphereColor{ Sphere(Vector3(0, -1000, 0), 940), Vector3(0,1,0) });
-	AddSphere(SphereColor{ Sphere(Vector3(0, 0, 1000), 940), Vector3(0,0,1) });
-	AddSphere(SphereColor{ Sphere(Vector3(0, 0, -1000), 940), Vector3(0,0,1) });
+	//AddSphere(SphereColor{ Sphere(Vector3(0, 0, 1000), 940), Vector3(0,0,1) });
+	//AddSphere(SphereColor{ Sphere(Vector3(0, 0, -1000), 940), Vector3(0,0,1) });
+	/*
+	AddSphere(SphereColor { Sphere(Vector3(1000, 0, 0), 940), Vector3(1,1,1) });
+	AddSphere(SphereColor{ Sphere(Vector3(-1000, 0, 0), 940), Vector3(1,1,1) });
+	AddSphere(SphereColor{ Sphere(Vector3(0, 1000, 0), 940), Vector3(1,1,1) });
+	AddSphere(SphereColor{ Sphere(Vector3(0, -1000, 0), 940), Vector3(1,1,1) });
+	AddSphere(SphereColor{ Sphere(Vector3(0, 0, 1000), 940), Vector3(1,1,1) });
+	AddSphere(SphereColor{ Sphere(Vector3(0, 0, -1000), 940), Vector3(1,1,1) });
+	*/
 }
 
 
@@ -63,9 +72,9 @@ IntersectionScene Scene::GetIntersection(const Ray& ray) const
 				res.t = t_sph;
 			}
 		};
-		res.P = ray.ComputePoint(res.t);
-		res.color = ray.Get_color() *v_spheres[res.i_sph].color;
 	}
+	res.P = ray.ComputePoint(res.t);
+	res.color = ray.Get_color() *v_spheres[res.i_sph].color;
 	return res;
 }
 

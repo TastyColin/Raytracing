@@ -66,14 +66,18 @@ int main()
 {
 	Vector3 C(0, 0, 55);
 	Vector3 O1(0, 0, 0);
-	Vector3 O2(10, 0, -40);
+	Vector3 O2(40, 0, -40);
 	Vector3 L(-10, 20, 40);
-	double I_light = 750000000;
+	Vector3 Bleu(0, 0.7, 1);
+	Vector3 Rouge(1, 0, 0.3);
+	double I_light = powf(2, 28);
 	Sphere Sph1(O1, 10);
-	Sphere Sph2(O2, 20);
+	Sphere Sph2(O2, 5);
+	SphereColor S1{ Sph1, Bleu };
+	SphereColor S2{ Sph2, Rouge };
 	Scene scene;
-	scene.AddSphere(Sph1);
-	scene.AddSphere(Sph2);
+	scene.AddSphere(S1);
+	scene.AddSphere(S2);
 	double fov = 60. * PI / 180.;
 	int W = 1024;
 	int H = 1024;
@@ -90,27 +94,20 @@ int main()
 			if (intersection.b_intersect) {
 				Vector3 P = intersection.P;
 				Vector3 O = scene.v_spheres[intersection.i_sph].sphere.Get_O();
-				Vector3 u_PO = (P - O);
-				u_PO.normalization();
-				Vector3 u_LP = (L - P);
-				u_LP.normalization();
+				Vector3 u_OP = (P - O);
+				u_OP.normalization();
+				Vector3 u_PL = (L - P);
+				u_PL.normalization();
 				double n2_PL = (P - L).norm_square();
-				double I_pixel = I_light / n2_PL * dot(u_LP, u_PO);
-				I_pixel = pow(I_pixel, 0.45);
+				double I_pixel = I_light / n2_PL * dot(u_PL, u_OP);
 				I_pixel = fmax(0, I_pixel);
-				//I_pixel = pow(I_pixel, 0.45);
+				I_pixel = pow(I_pixel, 0.45);
 				I_pixel = fmin(255, I_pixel);
 				for (int k = 0; k < 3; k++) img[(i*W + j ) * 3 + k] = int(I_pixel*intersection.color[k]);
 			}
 		}
 	}
 
-	save_image("test.bmp", &img[0], W, H);
-
-	Vector3 M(1, 2, 3);
-	Vector3 N(2, 4, 6);
-	double result = M.norm_square();
-	std::cout << result;
-
+	save_image("image.bmp", &img[0], W, H);
 	return 0;
 }
