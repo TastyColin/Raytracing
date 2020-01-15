@@ -1,20 +1,24 @@
 #pragma once
 #include "Sphere.h"
 #include <vector>
+#include <math.h>
 
 struct IntersectionScene
 {
-	bool b_intersect;
-	double t;
-	Vector3 P;
-	int i_sph;
-	Vector3 color;
+	bool b_intersect = false;
+	double t = 0;
+	Vector3 P = Vector3(0, 0, 0);
+	int i_sph = 0;
+	Vector3 color = Vector3(0, 0, 0);
 };
 
-struct SphereColor
+struct Material
 {
 	Sphere sphere;
 	Vector3 color = Vector3(1,1,1);
+	bool b_mirror = false;
+	bool b_transparency = false;
+	double material_index = 1;
 };
 
 
@@ -25,12 +29,14 @@ public:
 	~Scene();
 
 	void AddSphere(const Sphere&);
-	void AddSphere(const SphereColor&);
+	void AddSphere(const Material&);
 	bool DoIntersect(const Ray&) const;
-	IntersectionScene GetIntersection(const Ray&) const;
-	std::vector<SphereColor> v_spheres;
+	IntersectionScene GetIntersectionShadow(const Ray &) const;
+	IntersectionScene GetIntersection(Ray&) const;
+	std::vector<Material> v_spheres;
 
 private:
 	int nb_sphere;
+	void GetIntersectionRec(Ray& ray, int i_down, IntersectionScene& intersection) const;
 };
 

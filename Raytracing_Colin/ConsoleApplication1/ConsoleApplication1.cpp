@@ -66,15 +66,16 @@ int main()
 {
 	Vector3 C(0, 0, 55);
 	Vector3 O1(0, 0, 0);
-	Vector3 O2(40, 0, -40);
-	Vector3 L(-10, 20, 40);
+	Vector3 O2(40, 0, -50);
+	Vector3 L(-15, 10, 40);
 	Vector3 Bleu(0, 0.7, 1);
 	Vector3 Rouge(1, 0, 0.3);
-	double I_light = powf(2, 28);
+	double epsillon = 1e-8;
+	double I_light = powf(2, 30);
 	Sphere Sph1(O1, 10);
 	Sphere Sph2(O2, 5);
-	SphereColor S1{ Sph1, Bleu };
-	SphereColor S2{ Sph2, Rouge };
+	Material S1{ Sph1, Bleu, false, true, 1.5 };
+	Material S2{ Sph2, Rouge, false, true, 1.5 };
 	Scene scene;
 	scene.AddSphere(S1);
 	scene.AddSphere(S2);
@@ -91,15 +92,21 @@ int main()
 			v.normalization();
 			Ray ray(C, v, Vector3(1,1,1));
 			IntersectionScene intersection = scene.GetIntersection(ray);
+			IntersectionScene intersection_shadow;
+			Vector3 P, O, u_OP, u_PL;
+			bool b_visible = false;
 			if (intersection.b_intersect) {
-				Vector3 P = intersection.P;
-				Vector3 O = scene.v_spheres[intersection.i_sph].sphere.Get_O();
-				Vector3 u_OP = (P - O);
+				P = intersection.P;
+				O = scene.v_spheres[intersection.i_sph].sphere.Get_O();
+				u_OP = (P - O);
 				u_OP.normalization();
-				Vector3 u_PL = (L - P);
+				u_PL = (L - P);
 				u_PL.normalization();
 				double n2_PL = (P - L).norm_square();
-				double I_pixel = I_light / n2_PL * dot(u_PL, u_OP);
+				Ray shadow_ray(P + epsillon * u_OP, u_PL, Vector3(1,1,1));
+				intersection_shadow = scene.GetIntersectionShadow(shadow_ray);
+				b_visible = (!intersection_shadow.b_intersect) || (dot(L - P, u_PL) < intersection_shadow.t);
+				double I_pixel = I_light / n2_PL * dot(u_PL, u_OP)*b_visible;
 				I_pixel = fmax(0, I_pixel);
 				I_pixel = pow(I_pixel, 0.45);
 				I_pixel = fmin(255, I_pixel);

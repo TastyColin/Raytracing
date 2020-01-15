@@ -2,8 +2,13 @@
 #include "Vector3.h"
 #include <math.h>
 
+Vector3::Vector3()
+{
+	for (int i = 0; i < 3; i++) { coords[i] = 0; }
+}
 
-Vector3::Vector3(double x = 0, double y = 0, double z = 0)
+
+Vector3::Vector3(double x, double y, double z)
 {
 	coords[0] = x;
 	coords[1] = y;

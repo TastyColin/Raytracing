@@ -1,10 +1,7 @@
-﻿  pch.cpp
-  ConsoleApplication1.cpp
-  Ray.cpp
-  Scene.cpp
-  Sphere.cpp
-  Vector3.cpp
+﻿  ConsoleApplication1.cpp
   Génération de code en cours
-  All 178 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1 of 188 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   ConsoleApplication1.vcxproj -> D:\documents\GitHub\Raytracing\Raytracing_Colin\Release\ConsoleApplication1.exe
