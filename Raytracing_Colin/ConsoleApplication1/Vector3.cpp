@@ -79,6 +79,11 @@ Vector3& Vector3::operator=(const Vector3& other)
 	return *this;
 }
 
+Vector3 Vector3::operator-(void) const
+{
+	return -1.*(*this);
+}
+
 
 
 // Opérateurs standards

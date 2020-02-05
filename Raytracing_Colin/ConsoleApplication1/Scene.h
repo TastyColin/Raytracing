@@ -39,7 +39,6 @@ public:
 
 protected:
 	int nb_sphere;
-	IntersectionSphere _intersection_sphere;
 	void GetIntersectionSimple(const Ray& ray, IntersectionScene& intersection);
 	void GetIntersectionRec(Ray& ray, const int i_down, const int i_reflexion, IntersectionScene& intersection);
 	void AddDirectComponent(Ray& ray, IntersectionScene& intersection);

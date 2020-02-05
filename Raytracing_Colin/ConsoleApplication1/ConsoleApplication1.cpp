@@ -24,8 +24,7 @@ void save_image(const char* filename, const unsigned char* tableau, int w, int h
 int main()
 {
 	// Variables de tracé
-	const int NB_RAY = 100;					// Nb de rayons par pixel
-	const bool b_shadowing = true;			// Ombrage
+	const int NB_RAY = 1000;				// Nb de rayons par pixel
 	const bool b_anti_aliasing = true;		// Anti pixelisation
 
 	// Inialisation de la scène
@@ -35,18 +34,21 @@ int main()
 	const Vector3 Blanc(1, 1, 1);
 	const Vector3 Gris90(0.9, 0.9, 0.9);
 	const Vector3 Rouge(1, 0, 0.3);
+
 		// Caméra
-	const Vector3 C(0, 0, 55);				// Position de la caméra
+	const Vector3 O_camera(0, 0, 55);		// Position de la caméra
 	double fov = 60. * PI / 180.;			// Champs de vue (60°)
 	const int W = 512;						// Largeur (en pixels)
 	const int H = 512;						// Hauteur (en pixels)
+	const double ouverture = 0;				// largeur de l'ouverture du diaphragme
+	const double focus_distance = 55;		// distance de mise au point
 	std::vector<unsigned char> img(W*H * 3, 0);	// initialisation du tableau de l'image
+
 		// Lumière
 	const Vector3 L(-15, 10, 40);			// Position de la lumière
 	const Vector3 color_light = Blanc;		// Couleur
-	const double R_light =1;
-	const double I_light = powf(2, 28);		// Puissance de la lumière (2^28)
-
+	const double R_light = 0.01;
+	const double I_light = powf(2, 30);		// Puissance de la lumière (2^28)
 	const Material Light{ Sphere(L,R_light), Blanc, 1 };
 	scene.SetLight(Light);					// Ajout des sphères à la scène
 
@@ -63,15 +65,16 @@ int main()
 	// Déclaration des variables
 	double dx = 0;
 	double dy = 0;
-	Vector3 X, P, O, u_OP, u_LP,v, u_random_light, u_PX, I_pixel, I_pixel_aux;
-	Ray light_ray;
-	Ray shadow_ray;
-	IntersectionScene light_intersection;
-	IntersectionScene shadow_intersection;
+	
 
 #pragma omp parallel for
 	for (int i = 0; i < W; i++)
 	{
+		Vector3 ray_direction, I_pixel, O_ray, destination;
+		Ray light_ray;
+		Ray shadow_ray;
+		IntersectionScene light_intersection;
+		IntersectionScene shadow_intersection;
 		for (int j = 0; j < H; j++)
 		{
 			I_pixel.Reset();
@@ -79,14 +82,27 @@ int main()
 			for (int k_ray = 0; k_ray < NB_RAY; ++k_ray)
 			{
 				if (b_anti_aliasing) my_random_gaussian(dx, dy, 0.25);
-				v[0] = j - W / 2 + 0.5 + dx;
-				v[1] = -i + H / 2 + 0.5 + dy;
-				v[2] = -H / (2 * tan(fov / 2));
-				v.normalization();
+				ray_direction[0] = j - W / 2 + 0.5 + dx;
+				ray_direction[1] = -i + H / 2 + 0.5 + dy;
+				ray_direction[2] = -H / (2 * tan(fov / 2));
+				ray_direction.normalization();
 
 				// Initialisation du rayon
-				light_ray.Set_C(C);
-				light_ray.Set_u(v);
+				if (ouverture)
+				{
+					dx = (my_random() - 0.5)*ouverture;
+					dy = (my_random() - 0.5)*ouverture;
+					destination = O_camera + focus_distance * ray_direction;
+					O_ray = O_camera + Vector3(dx, dy, 0);
+					ray_direction = destination - O_ray;
+					ray_direction.normalization();
+				}
+				else
+				{
+					O_ray = O_camera;
+				}
+				light_ray.Set_C(O_ray);
+				light_ray.Set_u(ray_direction);
 				light_ray.Set_color(color_light);
 				light_ray.Set_inside(false);
 
@@ -105,12 +121,6 @@ int main()
 			}
 
 		}
-	}
-	int i = 371;
-	int j = 377;
-	for (int k = 0; k < 3; k++)
-	{
-		img[(i*W + j) * 3 + k] = int(255);
 	}
 	save_image("image.bmp", &img[0], W, H);
 	return 0;

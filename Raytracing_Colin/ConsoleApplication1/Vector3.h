@@ -23,7 +23,8 @@ public:
 	Vector3 &operator*=(const double &);
 	Vector3 &operator/=(const double &);
 	Vector3 &operator=(const Vector3& other);
-	
+	Vector3 operator-(void) const;
+
 	void Reset(void);
 
 	double operator[](int i) const;

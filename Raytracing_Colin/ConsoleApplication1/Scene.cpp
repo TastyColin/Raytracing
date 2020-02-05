@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Scene.h"
 
+const Vector3 PI_VECTOR(1 / PI, 1 / PI, 1 / PI);
 
 Scene::Scene() :
 	nb_sphere(0)
@@ -66,15 +67,16 @@ void Scene::GetIntersectionSimple(const Ray& ray, IntersectionScene& intersectio
 	// Appel récursif
 	intersection.t = 0;
 	intersection.b_intersect = false;
+	IntersectionSphere intersection_sphere;
 	for (int i_sph = 0; i_sph < nb_sphere; i_sph++)
 	{
-		v_spheres[i_sph].sphere.GetIntersection(ray, _intersection_sphere);
-		if (_intersection_sphere.b_intersect)
+		v_spheres[i_sph].sphere.GetIntersection(ray, intersection_sphere);
+		if (intersection_sphere.b_intersect)
 		{
 			intersection.b_intersect = true;
-			if (intersection.t < EPSILON || intersection.t > _intersection_sphere.t) {
+			if (intersection.t < EPSILON || intersection.t > intersection_sphere.t) {
 				intersection.i_sph = i_sph;
-				intersection.t = _intersection_sphere.t;
+				intersection.t = intersection_sphere.t;
 			}
 		};
 	}
@@ -87,7 +89,6 @@ void Scene::GetIntersectionRec(Ray& ray, const int i_down, const int i_reflexion
 		return; 
 	}
 	GetIntersectionSimple(ray, intersection);
-	
 	if (intersection.b_intersect)
 	{
 		intersection.P = ray.ComputePoint(intersection.t);
@@ -179,7 +180,7 @@ void Scene::AddDirectComponent(Ray& ray, IntersectionScene& intersection)
 
 		if (b_visible)
 		{
-			intersection.Color += 1 / d2 * std::max(0., costheta)*ray.Get_color();//*costhetaprime/costhetaseconde
+			intersection.Color += 1/d2*std::max(0., costheta)*costhetaprime/costhetaseconde/PI * ray.Get_color();
 		}
 	}
 }
