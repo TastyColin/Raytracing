@@ -2,13 +2,9 @@
 #include "Vector3.h"
 #include <math.h>
 
-Vector3::Vector3()
-{
-	for (int i = 0; i < 3; i++) { coords[i] = 0; }
-}
 
 
-Vector3::Vector3(double x, double y, double z)
+Vector3::Vector3(const double& x, const double& y, const double& z)
 {
 	coords[0] = x;
 	coords[1] = y;
@@ -28,6 +24,12 @@ Vector3::~Vector3()
 }
 
 
+void Vector3::Reset(void)
+{
+	for (int k = 0; k < 3; ++k) { coords[k] = 0.; }
+}
+
+
 double Vector3::operator[](int i) const
 {
 	return coords[i];
@@ -42,16 +44,41 @@ double &Vector3::operator[](int i)
 
 Vector3& Vector3::operator+=(const Vector3 &other)
 {
-	for (int i = 0; i < 3; i++) { coords[i] += other.coords[i]; }
+	for (int k = 0; k < 3; ++k) { coords[k] += other.coords[k]; }
 	return *this;
 }
 
 Vector3& Vector3::operator-=(const Vector3 &other)
 {
-	for (int i = 0; i < 3; i++) { coords[i] -= other.coords[i]; }
+	for (int k = 0; k < 3; ++k) { coords[k] -= other.coords[k]; }
 	return *this;
 }
 
+Vector3& Vector3::operator*=(const Vector3 &other)
+{
+	for (int k = 0; k < 3; ++k) { coords[k] *= other.coords[k]; }
+	return *this;
+}
+
+Vector3& Vector3::operator/=(const double &scal)
+{
+	for (int k = 0; k < 3; ++k) { coords[k] /= scal; }
+	return *this;
+}
+
+
+Vector3& Vector3::operator*=(const double &scal)
+{
+	for (int k = 0; k < 3; ++k) { coords[k] *= scal; }
+	return *this;
+}
+
+
+Vector3& Vector3::operator=(const Vector3& other)
+{
+	for (int k = 0; k < 3; ++k) { coords[k] = other.coords[k]; }
+	return *this;
+}
 
 
 
@@ -83,6 +110,13 @@ Vector3 operator*(const double &scal, const Vector3 &V)
 	return result;
 }
 
+Vector3 operator/(const Vector3 &V, const double &scal)
+{
+	Vector3 result = V;
+	for (int i = 0; i < 3; i++) { result[i] /= scal; }
+	return result;
+}
+
 // Autres fonctions
 
 double Vector3::norm_square() const
@@ -110,3 +144,16 @@ double dot(const Vector3& v1, const Vector3& v2)
 	}
 	return result;
 }
+
+Vector3 prod(const Vector3& U, const Vector3& V)
+{
+	Vector3 result;
+	for (int k = 0; k < 3; ++k)
+	{
+		result[k] = U[(k + 1)%3] * V[(k + 2) % 3] - U[(k + 2)%3] * V[(k + 1) % 3];
+	}
+
+	return result;
+}
+
+

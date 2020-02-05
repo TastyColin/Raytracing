@@ -15,8 +15,107 @@
 #include "Ray.h"
 #include "Sphere.h"
 #include "Scene.h"
+#include "constantes.h"
 
-const double PI = 3.14159265359;
+
+void save_image(const char* filename, const unsigned char* tableau, int w, int h);
+
+
+int main()
+{
+	// Variables de tracé
+	const int NB_RAY = 100;					// Nb de rayons par pixel
+	const bool b_shadowing = true;			// Ombrage
+	const bool b_anti_aliasing = true;		// Anti pixelisation
+
+	// Inialisation de la scène
+	Scene scene;
+		// Couleur
+	const Vector3 Bleu(0, 0.7, 1);
+	const Vector3 Blanc(1, 1, 1);
+	const Vector3 Gris90(0.9, 0.9, 0.9);
+	const Vector3 Rouge(1, 0, 0.3);
+		// Caméra
+	const Vector3 C(0, 0, 55);				// Position de la caméra
+	double fov = 60. * PI / 180.;			// Champs de vue (60°)
+	const int W = 512;						// Largeur (en pixels)
+	const int H = 512;						// Hauteur (en pixels)
+	std::vector<unsigned char> img(W*H * 3, 0);	// initialisation du tableau de l'image
+		// Lumière
+	const Vector3 L(-15, 10, 40);			// Position de la lumière
+	const Vector3 color_light = Blanc;		// Couleur
+	const double R_light =1;
+	const double I_light = powf(2, 28);		// Puissance de la lumière (2^28)
+
+	const Material Light{ Sphere(L,R_light), Blanc, 1 };
+	scene.SetLight(Light);					// Ajout des sphères à la scène
+
+		// Sphères
+	const Vector3 O1(0, 0, 0);
+	const Vector3 O2(40, 0, -50);
+	const Sphere Sph1(O1, 10);
+	const Sphere Sph2(O2, 5);
+	const Material S1{ Sph1, Bleu, 0, false, false, 1.5 };
+	const Material S2{ Sph2, Rouge, 0, false, false, 1.5 };
+	scene.AddSphere(S1);					// Ajout des sphères à la scène
+	scene.AddSphere(S2);
+
+	// Déclaration des variables
+	double dx = 0;
+	double dy = 0;
+	Vector3 X, P, O, u_OP, u_LP,v, u_random_light, u_PX, I_pixel, I_pixel_aux;
+	Ray light_ray;
+	Ray shadow_ray;
+	IntersectionScene light_intersection;
+	IntersectionScene shadow_intersection;
+
+#pragma omp parallel for
+	for (int i = 0; i < W; i++)
+	{
+		for (int j = 0; j < H; j++)
+		{
+			I_pixel.Reset();
+			
+			for (int k_ray = 0; k_ray < NB_RAY; ++k_ray)
+			{
+				if (b_anti_aliasing) my_random_gaussian(dx, dy, 0.25);
+				v[0] = j - W / 2 + 0.5 + dx;
+				v[1] = -i + H / 2 + 0.5 + dy;
+				v[2] = -H / (2 * tan(fov / 2));
+				v.normalization();
+
+				// Initialisation du rayon
+				light_ray.Set_C(C);
+				light_ray.Set_u(v);
+				light_ray.Set_color(color_light);
+				light_ray.Set_inside(false);
+
+				scene.GetIntersection(light_ray, light_intersection);
+				I_pixel += light_intersection.Color;
+			}
+			for (int k = 0; k < 3; ++k)
+			{
+				I_pixel[k] = pow(I_pixel[k]* I_light / NB_RAY, 0.45);
+				I_pixel[k] = fmin(255, I_pixel[k]);
+			}
+
+			for (int k = 0; k < 3; k++)
+			{
+				img[(i*W + j) * 3 + k] = int(I_pixel[k]);
+			}
+
+		}
+	}
+	int i = 371;
+	int j = 377;
+	for (int k = 0; k < 3; k++)
+	{
+		img[(i*W + j) * 3 + k] = int(255);
+	}
+	save_image("image.bmp", &img[0], W, H);
+	return 0;
+}
+
 
 void save_image(const char* filename, const unsigned char* tableau, int w, int h) { // (0,0) is top-left corner
 
@@ -58,63 +157,4 @@ void save_image(const char* filename, const unsigned char* tableau, int w, int h
 	}
 	fclose(f);
 	delete[] row;
-}
-
-
-
-int main()
-{
-	Vector3 C(0, 0, 55);
-	Vector3 O1(0, 0, 0);
-	Vector3 O2(40, 0, -50);
-	Vector3 L(-15, 10, 40);
-	Vector3 Bleu(0, 0.7, 1);
-	Vector3 Rouge(1, 0, 0.3);
-	double epsillon = 1e-8;
-	double I_light = powf(2, 30);
-	Sphere Sph1(O1, 10);
-	Sphere Sph2(O2, 5);
-	Material S1{ Sph1, Bleu, false, true, 1.5 };
-	Material S2{ Sph2, Rouge, false, true, 1.5 };
-	Scene scene;
-	scene.AddSphere(S1);
-	scene.AddSphere(S2);
-	double fov = 60. * PI / 180.;
-	int W = 1024;
-	int H = 1024;
-	std::vector<unsigned char> img(W*H * 3, 0);
-
-	for (int i = 0; i < W; i++)
-	{
-		for (int j = 0; j < H; j++)
-		{
-			Vector3 v(j - W / 2 + 0.5, -i + H / 2 + 0.5, -H / (2 * tan(fov / 2)));
-			v.normalization();
-			Ray ray(C, v, Vector3(1,1,1));
-			IntersectionScene intersection = scene.GetIntersection(ray);
-			IntersectionScene intersection_shadow;
-			Vector3 P, O, u_OP, u_PL;
-			bool b_visible = false;
-			if (intersection.b_intersect) {
-				P = intersection.P;
-				O = scene.v_spheres[intersection.i_sph].sphere.Get_O();
-				u_OP = (P - O);
-				u_OP.normalization();
-				u_PL = (L - P);
-				u_PL.normalization();
-				double n2_PL = (P - L).norm_square();
-				Ray shadow_ray(P + epsillon * u_OP, u_PL, Vector3(1,1,1));
-				intersection_shadow = scene.GetIntersectionShadow(shadow_ray);
-				b_visible = (!intersection_shadow.b_intersect) || (dot(L - P, u_PL) < intersection_shadow.t);
-				double I_pixel = I_light / n2_PL * dot(u_PL, u_OP)*b_visible;
-				I_pixel = fmax(0, I_pixel);
-				I_pixel = pow(I_pixel, 0.45);
-				I_pixel = fmin(255, I_pixel);
-				for (int k = 0; k < 3; k++) img[(i*W + j ) * 3 + k] = int(I_pixel*intersection.color[k]);
-			}
-		}
-	}
-
-	save_image("image.bmp", &img[0], W, H);
-	return 0;
 }

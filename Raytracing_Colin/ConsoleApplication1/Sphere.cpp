@@ -23,6 +23,7 @@ double Sphere::Get_R(void) const
 	return R;
 }
 
+
 // Intersection
 
 bool Sphere::DoIntersect(const Ray& ray) const
@@ -46,11 +47,12 @@ bool Sphere::DoIntersect(const Ray& ray) const
 }
 
 
-IntersectionSphere Sphere::GetIntersection(const Ray& ray) const
+void Sphere::GetIntersection(const Ray& ray, IntersectionSphere& intersection) const
 {
-	IntersectionSphere res;
 	Vector3 C = ray.Get_C();
 	Vector3 u = ray.Get_u();
+	intersection.b_intersect = false;
+	intersection.t = 0;
 	// Résolution eq degrès 2
 	double a, b, c, delta, t1, t2;
 	a = 1.;
@@ -61,17 +63,15 @@ IntersectionSphere Sphere::GetIntersection(const Ray& ray) const
 	t2 = (-b + sqrt(delta)) / (2 * a);
 	if (t1 > 0)
 	{
-		res.b_intersect = true;
-		res.t = t1;
-		return res;
+		intersection.b_intersect = true;
+		intersection.t = t1;
+		return;
 	}
 	if (t2 > 0)
 	{
-		res.b_intersect = true;
-		res.t = t2;
-		return res;
+		intersection.b_intersect = true;
+		intersection.t = t2;
 	}
-	return res;
 }
 
 
@@ -90,4 +90,10 @@ double Sphere::GetIntersectionDistance(const Ray& ray) const
 	t = fmin(t1, t2);
 	if (t <= 0) { t = t1 + t2 - t; }
 	return t;
+}
+
+
+Vector3 Sphere::GetNormal(const Vector3& P) const
+{
+	return (P - O) / R;
 }

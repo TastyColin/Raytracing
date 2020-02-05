@@ -18,10 +18,10 @@ public:
 
 	Vector3 Get_O(void) const;
 	double Get_R(void) const;
-
 	bool DoIntersect(const Ray&) const;
-	IntersectionSphere GetIntersection(const Ray&) const;
+	void GetIntersection(const Ray&, IntersectionSphere& intersection) const;
 	double GetIntersectionDistance(const Ray&) const;
+	Vector3 GetNormal(const Vector3&) const;
 
 protected:
 	Vector3 O;
