@@ -1,4 +1,6 @@
 #pragma once
+#include "Triangle.h"
+#include"Mesh.h"
 #include "Sphere.h"
 #include "my_random.h"
 #include <vector>
@@ -9,19 +11,11 @@ struct IntersectionScene
 	bool b_intersect = false;
 	double t = 0;
 	Vector3 P = Vector3(0, 0, 0);
+	Vector3 N = Vector3(0, 0, 0);
 	int i_sph = 0;
 	Vector3 Color = Vector3(0, 0, 0);
 };
 
-struct Material
-{
-	Sphere sphere;
-	Vector3 color = Vector3(1,1,1);
-	double emissivity = 0;
-	bool b_mirror = false;
-	bool b_transparency = false;
-	double material_index = 1;
-};
 
 
 class Scene
@@ -30,14 +24,18 @@ public:
 	Scene();
 	~Scene();
 
-	void AddSphere(const Sphere&);
-	void AddSphere(const Material&);
-	void SetLight(const Material& Sph);
-	bool DoIntersect(const Ray&) const;
+	void AddObject(const Sphere&);
+	void AddObject(const Triangle&);
+	void AddObject(const Mesh&);
+	void AddMaterial(const Material&);
+	void SetLight(Sphere& Sph);
 	void GetIntersection(Ray&, IntersectionScene& intersection);
-	std::vector<Material> v_spheres;
+	std::vector<Material> v_material;
+	int nb_material;
+
 
 protected:
+	std::vector<const Object*> v_objects;
 	int nb_sphere;
 	void GetIntersectionSimple(const Ray& ray, IntersectionScene& intersection);
 	void GetIntersectionRec(Ray& ray, const int i_down, const int i_reflexion, IntersectionScene& intersection);

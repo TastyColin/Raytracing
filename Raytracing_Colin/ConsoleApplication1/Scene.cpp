@@ -4,15 +4,12 @@
 const Vector3 PI_VECTOR(1 / PI, 1 / PI, 1 / PI);
 
 Scene::Scene() :
-	nb_sphere(0)
+	nb_sphere(0),
+	nb_material(0)
 {
-	AddSphere(Material{ Sphere(Vector3(0,0,0),0), Vector3(1, 1, 1) });
-	AddSphere(Material{ Sphere(Vector3(1000, 0, 0), 940), Vector3(1,0.2,0.8), false });
-	AddSphere(Material{ Sphere(Vector3(-1000, 0, 0), 940), Vector3(1,0,0), false });
-	AddSphere(Material{ Sphere(Vector3(0, 1000, 0), 940), Vector3(0.2,0.8,1), false });
-	AddSphere(Material{ Sphere(Vector3(0, -1000, 0), 940), Vector3(0,0,1), false });
-	AddSphere(Material{ Sphere(Vector3(0, 0, 1000), 940), Vector3(1,1,0.95), false });
-	AddSphere(Material{ Sphere(Vector3(0, 0, -1000), 900), Vector3(1,1,0.95), false });
+	AddMaterial(Material{ Vector3(1, 1, 1) });
+	Sphere sp = Sphere(Vector3(0, 0, 0), 0, (v_material[nb_material - 1]));
+	AddObject(sp);
 }
 
 
@@ -21,36 +18,36 @@ Scene::~Scene()
 }
 
 
-void Scene::AddSphere(const Sphere& Sph)
+void Scene::AddObject(const Sphere& s)
 {
-	Material Sph_color { Sph, Vector3(1,1,1) };
-	v_spheres.push_back(Sph_color);
+	v_objects.push_back(&s);
 	nb_sphere++;
 }
 
-void Scene::SetLight(const Material& sph)
+void Scene::AddObject(const Triangle& s)
 {
-	v_spheres[0] = sph;
-}
-
-void Scene::AddSphere(const Material& Sph_color)
-{
-	v_spheres.push_back(Sph_color);
+	v_objects.push_back(&s);
 	nb_sphere++;
 }
 
-
-bool Scene::DoIntersect(const Ray& ray) const
+void Scene::AddObject(const Mesh& s)
 {
-	for (int i_sph = 0; i_sph < nb_sphere; i_sph++)
-	{
-		if (v_spheres[i_sph].sphere.DoIntersect(ray))
-		{
-			return true;
-		};
-	}
-	return false;
+	v_objects.push_back(&s);
+	nb_sphere++;
 }
+
+void Scene::AddMaterial(const Material& mat)
+{
+	v_material.push_back(mat);
+	++nb_material;
+}
+
+void Scene::SetLight(Sphere& sph)
+{
+	v_objects[0] = &sph;
+}
+
+
 
 
 
@@ -67,16 +64,17 @@ void Scene::GetIntersectionSimple(const Ray& ray, IntersectionScene& intersectio
 	// Appel récursif
 	intersection.t = 0;
 	intersection.b_intersect = false;
-	IntersectionSphere intersection_sphere;
+	IntersectionObject intersection_sphere;
 	for (int i_sph = 0; i_sph < nb_sphere; i_sph++)
 	{
-		v_spheres[i_sph].sphere.GetIntersection(ray, intersection_sphere);
+		v_objects[i_sph]->GetIntersection(ray, intersection_sphere);
 		if (intersection_sphere.b_intersect)
 		{
 			intersection.b_intersect = true;
 			if (intersection.t < EPSILON || intersection.t > intersection_sphere.t) {
 				intersection.i_sph = i_sph;
 				intersection.t = intersection_sphere.t;
+				intersection.N = intersection_sphere.N;
 			}
 		};
 	}
@@ -93,55 +91,55 @@ void Scene::GetIntersectionRec(Ray& ray, const int i_down, const int i_reflexion
 	{
 		intersection.P = ray.ComputePoint(intersection.t);
 		// Mirroir
-		if (v_spheres[intersection.i_sph].b_mirror)
+		if (v_objects[intersection.i_sph]->material.b_mirror)
 		{
-			Vector3 n = v_spheres[intersection.i_sph].sphere.GetNormal(intersection.P);
-			ray.Set_C(intersection.P + EPSILON *n);
-			ray.Set_u(ray.Get_u() - 2 * dot(ray.Get_u(), n) * n);
-			ray.Color(v_spheres[intersection.i_sph].color, v_spheres[intersection.i_sph].emissivity);
+			Vector3& N = intersection.N;
+			ray.Set_C(intersection.P + EPSILON *N);
+			ray.Set_u(ray.Get_u() - 2 * dot(ray.Get_u(), N) * N);
+			ray.Color(v_objects[intersection.i_sph]->material.color, v_objects[intersection.i_sph]->material.emissivity);
 			GetIntersectionRec(ray, i_down, i_reflexion - 1, intersection);
 		}
 		// Transparence
-		else if (v_spheres[intersection.i_sph].b_transparency)
+		else if (v_objects[intersection.i_sph]->material.b_transparency)
 		{
 			Vector3 u_I = ray.Get_u();
-			Vector3 n = v_spheres[intersection.i_sph].sphere.GetNormal(intersection.P);
-			if (ray.IsInside()) { n *= -1; }
+			Vector3& N = intersection.N;
+			if (ray.IsInside()) { N *= -1; }
 			double r_index;
 			if (ray.IsInside())
 			{
-				r_index = v_spheres[intersection.i_sph].material_index;
+				r_index = v_objects[intersection.i_sph]->material.material_index;
 			}
 			else
 			{
-				r_index = 1 / v_spheres[intersection.i_sph].material_index;
+				r_index = 1 / v_objects[intersection.i_sph]->material.material_index;
 			}
-			double alpha = 1 - pow(r_index, 2) * (1 - pow(dot(n, u_I), 2));
+			double alpha = 1 - pow(r_index, 2) * (1 - pow(dot(N, u_I), 2));
 			
 			if (alpha > 0)	// Refraction
 			{
-				Vector3 T_T = r_index * (u_I - dot(u_I, n)*n);
-				Vector3 T_N = -sqrt(alpha)*n;
-				ray.Set_C(intersection.P - EPSILON *n);
+				Vector3 T_T = r_index * (u_I - dot(u_I, N)*N);
+				Vector3 T_N = -sqrt(alpha)*N;
+				ray.Set_C(intersection.P - EPSILON *N);
 				ray.Set_u(T_T+T_N);
 				ray.Set_inside(!ray.IsInside());
-				ray.Color(v_spheres[intersection.i_sph].color, v_spheres[intersection.i_sph].emissivity);
+				ray.Color(v_objects[intersection.i_sph]->material.color, v_objects[intersection.i_sph]->material.emissivity);
 				GetIntersectionRec(ray, i_down, i_reflexion - 1, intersection);
 			}
 			else // Réflexion
 			{
-				ray.Set_C(intersection.P + EPSILON *n);
-				ray.Set_u(ray.Get_u() - 2 * dot(ray.Get_u(), n) * n);
-				ray.Color(v_spheres[intersection.i_sph].color, v_spheres[intersection.i_sph].emissivity);
+				ray.Set_C(intersection.P + EPSILON *N);
+				ray.Set_u(ray.Get_u() - 2 * dot(ray.Get_u(), N) * N);
+				ray.Color(v_objects[intersection.i_sph]->material.color, v_objects[intersection.i_sph]->material.emissivity);
 			}
 		}
 		else
 		{
-			ray.Color(v_spheres[intersection.i_sph].color);
+			ray.Color(v_objects[intersection.i_sph]->material.color);
 			AddDirectComponent(ray, intersection);
-			Vector3 n = v_spheres[intersection.i_sph].sphere.GetNormal(intersection.P);
-			ray.Set_C(intersection.P + EPSILON *n);
-			ray.Set_u(random_cos(n));
+			Vector3& N = intersection.N;
+			ray.Set_C(intersection.P + EPSILON *N);
+			ray.Set_u(random_cos(N));
 			GetIntersectionRec(ray, i_down-1, i_reflexion, intersection);
 		}
 	}
@@ -150,14 +148,12 @@ void Scene::GetIntersectionRec(Ray& ray, const int i_down, const int i_reflexion
 
 void Scene::AddDirectComponent(Ray& ray, IntersectionScene& intersection)
 {
-	bool b_visible = false;
 	if (intersection.b_intersect && intersection.i_sph != 0) {
-		Vector3 P = intersection.P;
-		Vector3 L = v_spheres[0].sphere.Get_O();
-		double R_light = v_spheres[0].sphere.Get_R();
-		Vector3 O = v_spheres[intersection.i_sph].sphere.Get_O();
-		Vector3 u_OP = (P - O);
-		u_OP.normalization();
+		Vector3& P = intersection.P;
+		const Sphere* p_light_sphere = dynamic_cast<const Sphere*>(v_objects[0]);
+		Vector3 L = p_light_sphere->Get_O();
+		double R_light = p_light_sphere->Get_R();
+		Vector3& u_OP = intersection.N;
 		Vector3 u_LP = (P - L);
 		u_LP.normalization();
 		Vector3 u_random_light = random_cos(u_LP);
@@ -173,14 +169,14 @@ void Scene::AddDirectComponent(Ray& ray, IntersectionScene& intersection)
 		// Test de l'ombre pour la visibilité
 		Ray shadow_ray;
 		IntersectionScene shadow_intersection;
-		shadow_ray.Set_C(P + EPSILON*u_PX);
+		shadow_ray.Set_C(P + EPSILON*u_OP);
 		shadow_ray.Set_u(u_PX);
 		GetIntersectionSimple(shadow_ray, shadow_intersection);
-		b_visible = (!shadow_intersection.b_intersect) || (dot(X - P, u_PX) < shadow_intersection.t + EPSILON);
+		bool b_visible = (!shadow_intersection.b_intersect) || (dot(X - P, u_PX) - 2*EPSILON < shadow_intersection.t);
 
 		if (b_visible)
 		{
-			intersection.Color += 1/d2*std::max(0., costheta)*costhetaprime/costhetaseconde/PI * ray.Get_color();
+			intersection.Color += 1 / d2 * std::max(0., costheta)*costhetaprime / costhetaseconde / PI * ray.Get_color();
 		}
 	}
 }

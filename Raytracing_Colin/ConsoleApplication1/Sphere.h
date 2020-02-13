@@ -1,25 +1,17 @@
 #pragma once
-#include "Vector3.h"
-#include "Ray.h"
-#include <math.h>
+#include "Object.h"
 
 
-struct IntersectionSphere
-{
-	bool b_intersect = false;
-	double t = 0;
-};
-
-class Sphere
+class Sphere : public Object
 {
 public:
-	Sphere(const Vector3& O, double R);
+	Sphere(const Vector3& O, double R, Material m);
 	~Sphere();
 
 	Vector3 Get_O(void) const;
 	double Get_R(void) const;
 	bool DoIntersect(const Ray&) const;
-	void GetIntersection(const Ray&, IntersectionSphere& intersection) const;
+	void GetIntersection(const Ray&, IntersectionObject& intersection) const;
 	double GetIntersectionDistance(const Ray&) const;
 	Vector3 GetNormal(const Vector3&) const;
 

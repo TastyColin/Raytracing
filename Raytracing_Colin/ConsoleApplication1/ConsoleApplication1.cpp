@@ -15,6 +15,7 @@
 #include "Ray.h"
 #include "Sphere.h"
 #include "Scene.h"
+#include "Mesh.h"
 #include "constantes.h"
 
 
@@ -24,7 +25,7 @@ void save_image(const char* filename, const unsigned char* tableau, int w, int h
 int main()
 {
 	// Variables de tracé
-	const int NB_RAY = 1000;				// Nb de rayons par pixel
+	const int NB_RAY = 100;				// Nb de rayons par pixel
 	const bool b_anti_aliasing = true;		// Anti pixelisation
 
 	// Inialisation de la scène
@@ -34,6 +35,30 @@ int main()
 	const Vector3 Blanc(1, 1, 1);
 	const Vector3 Gris90(0.9, 0.9, 0.9);
 	const Vector3 Rouge(1, 0, 0.3);
+	const Vector3 Vert(0, 1, 0.3);
+
+
+	const Material RightMaterial{ Vector3(1,0.2,0.8) };
+	const Material LeftMaterial{ Vector3(1, 0, 0) };
+	const Material UpMaterial{ Vector3(0.2,0.8,1) };
+	const Material BottomMaterial{ Vector3(0,0,1) };
+	const Material FrontMaterial{ Vector3(1,1,0.95) };
+	const Material BackMaterial = FrontMaterial;
+
+	const Sphere WallRight(Vector3(1000, 0, 0), 940, RightMaterial);
+	const Sphere WallLeft(Vector3(-1000, 0, 0), 940, LeftMaterial);
+	const Sphere WallTop(Vector3(0, 1000, 0), 940, UpMaterial);
+	const Sphere WallBottom(Vector3(0, -1000, 0), 940, BottomMaterial);
+	const Sphere WallFront(Vector3(0, 0, 1000), 940, FrontMaterial);
+	const Sphere WallBack(Vector3(0, 0, -1000), 900, BackMaterial);
+
+	scene.AddObject(WallRight);
+	scene.AddObject(WallLeft);
+	scene.AddObject(WallTop);
+	scene.AddObject(WallBottom);
+	scene.AddObject(WallFront);
+	scene.AddObject(WallBack);
+	
 
 		// Caméra
 	const Vector3 O_camera(0, 0, 55);		// Position de la caméra
@@ -47,20 +72,28 @@ int main()
 		// Lumière
 	const Vector3 L(-15, 10, 40);			// Position de la lumière
 	const Vector3 color_light = Blanc;		// Couleur
-	const double R_light = 0.01;
-	const double I_light = powf(2, 30);		// Puissance de la lumière (2^28)
-	const Material Light{ Sphere(L,R_light), Blanc, 1 };
-	scene.SetLight(Light);					// Ajout des sphères à la scène
-
+	const double R_light = 1;
+	const double I_light = powf(2, 29);		// Puissance de la lumière (2^28)
+	Material LightMaterial{ Blanc, 1 };
+	Sphere light_sph(L, R_light, LightMaterial);
+	scene.SetLight(light_sph);					// Ajout des sphères à la scène
 		// Sphères
 	const Vector3 O1(0, 0, 0);
 	const Vector3 O2(40, 0, -50);
-	const Sphere Sph1(O1, 10);
-	const Sphere Sph2(O2, 5);
-	const Material S1{ Sph1, Bleu, 0, false, false, 1.5 };
-	const Material S2{ Sph2, Rouge, 0, false, false, 1.5 };
-	scene.AddSphere(S1);					// Ajout des sphères à la scène
-	scene.AddSphere(S2);
+	Material BleuMaterial{ Bleu, 0, false, false, 1.5 };
+	Material RougeMaterial{ Rouge, 0, false, false, 1.5 };
+	Material VertMaterial{ Vert, 0, false, false, 1.5 };
+	Material BlancMaterial{ Blanc, 0, true, false, 1.5 };
+
+	/*Sphere Sph1(O1, 10, BleuMaterial);
+	Sphere Sph2 = Sphere(O2, 5, RougeMaterial);
+	scene.AddObject(Sph1);					// Ajout des sphères à la scène
+	scene.AddObject(Sph2);
+	Triangle triangle(O1, O2, Vector3(20, 40, -25), VertMaterial);
+	scene.AddObject(triangle);*/
+
+	Mesh g1("girl.obj", 30, Vector3(0, -60, -60), BlancMaterial);
+	scene.AddObject(g1);
 
 	// Déclaration des variables
 	double dx = 0;
