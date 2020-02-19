@@ -25,7 +25,7 @@ void save_image(const char* filename, const unsigned char* tableau, int w, int h
 int main()
 {
 	// Variables de tracé
-	const int NB_RAY = 100;				// Nb de rayons par pixel
+	const int NB_RAY = 1000;					// Nb de rayons par pixel
 	const bool b_anti_aliasing = true;		// Anti pixelisation
 
 	// Inialisation de la scène
@@ -65,8 +65,8 @@ int main()
 	double fov = 60. * PI / 180.;			// Champs de vue (60°)
 	const int W = 512;						// Largeur (en pixels)
 	const int H = 512;						// Hauteur (en pixels)
-	const double ouverture = 0;				// largeur de l'ouverture du diaphragme
-	const double focus_distance = 55;		// distance de mise au point
+	const double ouverture = 5.;				// largeur de l'ouverture du diaphragme
+	const double focus_distance = 115;		// distance de mise au point
 	std::vector<unsigned char> img(W*H * 3, 0);	// initialisation du tableau de l'image
 
 		// Lumière
@@ -83,7 +83,8 @@ int main()
 	Material BleuMaterial{ Bleu, 0, false, false, 1.5 };
 	Material RougeMaterial{ Rouge, 0, false, false, 1.5 };
 	Material VertMaterial{ Vert, 0, false, false, 1.5 };
-	Material BlancMaterial{ Blanc, 0, true, false, 1.5 };
+	Material BlancMaterial{ Blanc, 0, false, false, 1.5 };
+	Material MirrorMaterial{ Blanc, 0, true, false, 1.5 };
 
 	/*Sphere Sph1(O1, 10, BleuMaterial);
 	Sphere Sph2 = Sphere(O2, 5, RougeMaterial);
@@ -92,8 +93,10 @@ int main()
 	Triangle triangle(O1, O2, Vector3(20, 40, -25), VertMaterial);
 	scene.AddObject(triangle);*/
 
-	Mesh g1("girl.obj", 30, Vector3(0, -60, -60), BlancMaterial);
+	Mesh g1("girl.obj", 50, Vector3(0, -60, -60), BlancMaterial);
+	//Mesh g2("girl.obj", 30, Vector3(40, -60, -80), RougeMaterial);
 	scene.AddObject(g1);
+	//scene.AddObject(g2);
 
 	// Déclaration des variables
 	double dx = 0;

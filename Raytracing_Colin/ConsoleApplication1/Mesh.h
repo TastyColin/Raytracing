@@ -9,12 +9,25 @@
 
 class TriangleIndices {
 public:
-	TriangleIndices(int vtxi = -1, int vtxj = -1, int vtxk = -1, int ni = -1, int nj = -1, int nk = -1, int uvi = -1, int uvj = -1, int uvk = -1) : vtxi(vtxi), vtxj(vtxj), vtxk(vtxk), uvi(uvi), uvj(uvj), uvk(uvk), ni(ni), nj(nj), nk(nk) {
+	TriangleIndices(int vtxi = -1, int vtxj = -1, int vtxk = -1, int ni = -1, int nj = -1, int nk = -1, int uvi = -1, int uvj = -1, int uvk = -1)
+	{
+		vtx[0] = vtxi; vtx[1] = vtxj; vtx[2] = vtxk;
+		uv[0] = uvi; vtx[1] = uvj; uv[2] = uvk;
+		n[0] = ni; n[1] = nj; n[2] = nk;
 	};
-	int vtxi, vtxj, vtxk;
-	int uvi, uvj, uvk;
-	int ni, nj, nk;
+	int vtx[3];
+	int uv[3];
+	int n[3];
 	int faceGroup;
+};
+
+
+struct Node {
+	Bbox bbox =Bbox();
+	int i_first = 0;
+	int nb_triangle = 0;
+	Node* right_child = NULL;
+	Node* left_child = NULL;
 };
 
 
@@ -39,6 +52,9 @@ public:
 	std::vector<int> w, h;
 
 private:
-	Bbox bbox;
+	Node* p_node;
+	void _ComputeNodes(Node* p_node);
+	Bbox _ComputeBbox(int i_first, int nb_triagle);
+	void _GetIntersectionRec(const Ray&, IntersectionObject& intersection, Node* p_node) const;
 };
 

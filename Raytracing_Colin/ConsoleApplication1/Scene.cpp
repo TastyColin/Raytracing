@@ -54,7 +54,7 @@ void Scene::SetLight(Sphere& sph)
 void Scene::GetIntersection(Ray& ray, IntersectionScene& intersection)
 {
 	intersection.Color.Reset();
-	GetIntersectionRec(ray, 4, 1, intersection);
+	GetIntersectionRec(ray, 4, 4, intersection);
 	return;
 }
 
