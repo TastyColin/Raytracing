@@ -9,6 +9,7 @@ struct IntersectionObject
 	bool b_intersect = false;
 	double t = 0;
 	Vector3 N = Vector3(0.,0.,0.);
+	Vector3 Color = Vector3(0., 0., 0.);
 };
 
 struct Material
@@ -18,6 +19,8 @@ struct Material
 	bool b_mirror = false;
 	bool b_transparency = false;
 	double material_index = 1;
+	double ks = 0.5;
+	double n = 1000;
 };
 
 class Object

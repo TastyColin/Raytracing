@@ -13,6 +13,7 @@ struct IntersectionScene
 	Vector3 P = Vector3(0, 0, 0);
 	Vector3 N = Vector3(0, 0, 0);
 	int i_sph = 0;
+	Vector3 ColorPixel = Vector3(0, 0, 0);
 	Vector3 Color = Vector3(0, 0, 0);
 };
 

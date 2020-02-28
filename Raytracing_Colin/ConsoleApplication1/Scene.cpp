@@ -53,8 +53,8 @@ void Scene::SetLight(Sphere& sph)
 
 void Scene::GetIntersection(Ray& ray, IntersectionScene& intersection)
 {
-	intersection.Color.Reset();
-	GetIntersectionRec(ray, 4, 4, intersection);
+	intersection.ColorPixel.Reset();
+	GetIntersectionRec(ray, 4, 10, intersection);
 	return;
 }
 
@@ -75,9 +75,15 @@ void Scene::GetIntersectionSimple(const Ray& ray, IntersectionScene& intersectio
 				intersection.i_sph = i_sph;
 				intersection.t = intersection_sphere.t;
 				intersection.N = intersection_sphere.N;
+				intersection.Color = intersection_sphere.Color;
 			}
 		};
 	}
+}
+
+double phong_brdf(const Vector3& wi, const Vector3& wo, const Material& material)
+{
+	return std::pow(dot(wi, wo), material.n) * (material.n + 2) / 2;
 }
 
 
@@ -96,7 +102,7 @@ void Scene::GetIntersectionRec(Ray& ray, const int i_down, const int i_reflexion
 			Vector3& N = intersection.N;
 			ray.Set_C(intersection.P + EPSILON *N);
 			ray.Set_u(ray.Get_u() - 2 * dot(ray.Get_u(), N) * N);
-			ray.Color(v_objects[intersection.i_sph]->material.color, v_objects[intersection.i_sph]->material.emissivity);
+			ray.Color(intersection.Color, v_objects[intersection.i_sph]->material.emissivity);
 			GetIntersectionRec(ray, i_down, i_reflexion - 1, intersection);
 		}
 		// Transparence
@@ -123,23 +129,47 @@ void Scene::GetIntersectionRec(Ray& ray, const int i_down, const int i_reflexion
 				ray.Set_C(intersection.P - EPSILON *N);
 				ray.Set_u(T_T+T_N);
 				ray.Set_inside(!ray.IsInside());
-				ray.Color(v_objects[intersection.i_sph]->material.color, v_objects[intersection.i_sph]->material.emissivity);
+				ray.Color(intersection.Color, v_objects[intersection.i_sph]->material.emissivity);
 				GetIntersectionRec(ray, i_down, i_reflexion - 1, intersection);
 			}
 			else // Réflexion
 			{
 				ray.Set_C(intersection.P + EPSILON *N);
 				ray.Set_u(ray.Get_u() - 2 * dot(ray.Get_u(), N) * N);
-				ray.Color(v_objects[intersection.i_sph]->material.color, v_objects[intersection.i_sph]->material.emissivity);
+				ray.Color(intersection.Color, v_objects[intersection.i_sph]->material.emissivity);
 			}
 		}
 		else
 		{
-			ray.Color(v_objects[intersection.i_sph]->material.color);
+			ray.Color(intersection.Color);
 			AddDirectComponent(ray, intersection);
 			Vector3& N = intersection.N;
-			ray.Set_C(intersection.P + EPSILON *N);
-			ray.Set_u(random_cos(N));
+			double ks = v_objects[intersection.i_sph]->material.ks;
+			ray.Set_C(intersection.P + EPSILON * N);
+			double n = v_objects[intersection.i_sph]->material.n;
+			Vector3 R = ray.Get_u() - 2 * dot(ray.Get_u(), N) * N;
+			Vector3 direction_aleatoire;
+			double p = 1-ks;
+			bool sample_diffuse = my_random() < p;
+			if (sample_diffuse)
+			{
+				direction_aleatoire = random_cos(N);
+			}
+			else
+			{
+				direction_aleatoire = random_lob(R, n);
+				if (dot(N, ray.Get_u()) < 0 || dot(R, ray.Get_u()))
+					return;
+			}
+			ray.Set_u(direction_aleatoire);
+
+			double proba_phong = (n + 1) / (2 * PI) * std::pow(dot(R, direction_aleatoire), n);
+			double proba_globale = p * dot(N, direction_aleatoire) / PI + (1 - p) * proba_phong;
+			
+			if (sample_diffuse)
+				ray.Color((1 - ks)* dot(N, direction_aleatoire) / PI / proba_globale);
+			else
+				ray.Color(ks * (n + 2) * std::pow(dot(direction_aleatoire, ray.Get_u()),n) / (2 * PI) / proba_globale);
 			GetIntersectionRec(ray, i_down-1, i_reflexion, intersection);
 		}
 	}
@@ -174,9 +204,10 @@ void Scene::AddDirectComponent(Ray& ray, IntersectionScene& intersection)
 		GetIntersectionSimple(shadow_ray, shadow_intersection);
 		bool b_visible = (!shadow_intersection.b_intersect) || (dot(X - P, u_PX) - 2*EPSILON < shadow_intersection.t);
 
+		double brdf = (1 - v_objects[intersection.i_sph]->material.ks) + phong_brdf(u_PX, -ray.Get_u(), v_objects[intersection.i_sph]->material)/2 * v_objects[intersection.i_sph]->material.ks;
 		if (b_visible)
 		{
-			intersection.Color += 1 / d2 * std::max(0., costheta)*costhetaprime / costhetaseconde / PI * ray.Get_color();
+			intersection.ColorPixel += brdf / d2 * std::max(0., costheta)*costhetaprime / costhetaseconde / PI * ray.Get_color();
 		}
 	}
 }

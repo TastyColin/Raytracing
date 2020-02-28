@@ -26,6 +26,39 @@ double Sphere::Get_R(void) const
 
 // Intersection
 
+void Sphere::GetIntersection(const Ray& ray, IntersectionObject& intersection) const
+{
+	Vector3 C = ray.Get_C();
+	Vector3 u = ray.Get_u();
+	intersection.b_intersect = false;
+	intersection.t = 0;
+	// Résolution eq degrès 2
+	double a, b, c, delta, t1, t2;
+	a = 1.;
+	b = 2. * dot(u, C - O);
+	c = (C - O).norm_square() - R * R;
+	delta = b * b - 4 * a*c;
+	t1 = (-b - sqrt(delta)) / (2 * a);
+	t2 = (-b + sqrt(delta)) / (2 * a);
+	if (t1 > 0)
+	{
+		intersection.b_intersect = true;
+		intersection.t = t1;
+		intersection.N = (C + intersection.t * u - O) / R;
+		intersection.Color = material.color;
+		return;
+	}
+	if (t2 > 0)
+	{
+		intersection.b_intersect = true;
+		intersection.t = t2;
+		intersection.N = (C + intersection.t * u - O) / R;
+		intersection.Color = material.color;
+	}
+}
+/*
+
+
 bool Sphere::DoIntersect(const Ray& ray) const
 {
 	Vector3 C = ray.Get_C();
@@ -46,37 +79,6 @@ bool Sphere::DoIntersect(const Ray& ray) const
 	}
 }
 
-
-void Sphere::GetIntersection(const Ray& ray, IntersectionObject& intersection) const
-{
-	Vector3 C = ray.Get_C();
-	Vector3 u = ray.Get_u();
-	intersection.b_intersect = false;
-	intersection.t = 0;
-	// Résolution eq degrès 2
-	double a, b, c, delta, t1, t2;
-	a = 1.;
-	b = 2. * dot(u, C - O);
-	c = (C - O).norm_square() - R * R;
-	delta = b * b - 4 * a*c;
-	t1 = (-b - sqrt(delta)) / (2 * a);
-	t2 = (-b + sqrt(delta)) / (2 * a);
-	if (t1 > 0)
-	{
-		intersection.b_intersect = true;
-		intersection.t = t1;
-		intersection.N = (C + intersection.t * u - O) / R;
-		return;
-	}
-	if (t2 > 0)
-	{
-		intersection.b_intersect = true;
-		intersection.t = t2;
-		intersection.N = (C + intersection.t * u - O) / R;
-	}
-}
-
-
 double Sphere::GetIntersectionDistance(const Ray& ray) const
 {
 	Vector3 C = ray.Get_C();
@@ -93,7 +95,7 @@ double Sphere::GetIntersectionDistance(const Ray& ray) const
 	if (t <= 0) { t = t1 + t2 - t; }
 	return t;
 }
-
+*/
 
 Vector3 Sphere::GetNormal(const Vector3& P) const
 {

@@ -10,9 +10,9 @@ public:
 
 	Vector3 Get_O(void) const;
 	double Get_R(void) const;
-	bool DoIntersect(const Ray&) const;
+	//bool DoIntersect(const Ray&) const;
 	void GetIntersection(const Ray&, IntersectionObject& intersection) const;
-	double GetIntersectionDistance(const Ray&) const;
+	//double GetIntersectionDistance(const Ray&) const;
 	Vector3 GetNormal(const Vector3&) const;
 
 protected:

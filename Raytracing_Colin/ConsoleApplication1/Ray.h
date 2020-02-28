@@ -21,6 +21,7 @@ public:
 	void Set_inside(bool);
 	void Set_color(const Vector3&);
 	void Color(const Vector3&, const double& = 0.);
+	void Color(const double&);
 
 
 	Vector3 ComputePoint(double t) const;

@@ -25,7 +25,7 @@ void save_image(const char* filename, const unsigned char* tableau, int w, int h
 int main()
 {
 	// Variables de tracé
-	const int NB_RAY = 1000;					// Nb de rayons par pixel
+	const int NB_RAY = 10;					// Nb de rayons par pixel
 	const bool b_anti_aliasing = true;		// Anti pixelisation
 
 	// Inialisation de la scène
@@ -65,7 +65,7 @@ int main()
 	double fov = 60. * PI / 180.;			// Champs de vue (60°)
 	const int W = 512;						// Largeur (en pixels)
 	const int H = 512;						// Hauteur (en pixels)
-	const double ouverture = 5.;				// largeur de l'ouverture du diaphragme
+	const double ouverture = 5.;			// largeur de l'ouverture du diaphragme
 	const double focus_distance = 115;		// distance de mise au point
 	std::vector<unsigned char> img(W*H * 3, 0);	// initialisation du tableau de l'image
 
@@ -76,14 +76,15 @@ int main()
 	const double I_light = powf(2, 29);		// Puissance de la lumière (2^28)
 	Material LightMaterial{ Blanc, 1 };
 	Sphere light_sph(L, R_light, LightMaterial);
-	scene.SetLight(light_sph);					// Ajout des sphères à la scène
+	scene.SetLight(light_sph);				// Ajout des sphères à la scène
 		// Sphères
 	const Vector3 O1(0, 0, 0);
 	const Vector3 O2(40, 0, -50);
-	Material BleuMaterial{ Bleu, 0, false, false, 1.5 };
-	Material RougeMaterial{ Rouge, 0, false, false, 1.5 };
-	Material VertMaterial{ Vert, 0, false, false, 1.5 };
-	Material BlancMaterial{ Blanc, 0, false, false, 1.5 };
+	Material BlueMaterial{ Bleu, 0, false, false, 1.5 };
+	Material RedMaterial{ Rouge, 0, false, false, 1.5 };
+	Material GreenMaterial{ Vert, 0, false, false, 1.5 };
+	Material WhiteMaterial{ Blanc, 0, false, false, 1.5 };
+	Material GlassMaterial{ Blanc, 0, false, true, 1.5 };
 	Material MirrorMaterial{ Blanc, 0, true, false, 1.5 };
 
 	/*Sphere Sph1(O1, 10, BleuMaterial);
@@ -93,7 +94,7 @@ int main()
 	Triangle triangle(O1, O2, Vector3(20, 40, -25), VertMaterial);
 	scene.AddObject(triangle);*/
 
-	Mesh g1("girl.obj", 50, Vector3(0, -60, -60), BlancMaterial);
+	Mesh g1("Beautiful Girl.obj", 50, Vector3(0, -60, -60), WhiteMaterial);
 	//Mesh g2("girl.obj", 30, Vector3(40, -60, -80), RougeMaterial);
 	scene.AddObject(g1);
 	//scene.AddObject(g2);
@@ -143,7 +144,7 @@ int main()
 				light_ray.Set_inside(false);
 
 				scene.GetIntersection(light_ray, light_intersection);
-				I_pixel += light_intersection.Color;
+				I_pixel += light_intersection.ColorPixel;
 			}
 			for (int k = 0; k < 3; ++k)
 			{

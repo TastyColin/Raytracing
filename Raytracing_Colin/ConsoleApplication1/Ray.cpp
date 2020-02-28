@@ -75,6 +75,11 @@ void Ray::Color(const Vector3& color_to_apply, const double& e)
 	emissivity = e;
 }
 
+void Ray::Color(const double& scal)
+{
+	color *= scal;
+}
+
 
 Vector3 Ray::ComputePoint(double t) const
 {

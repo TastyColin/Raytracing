@@ -128,7 +128,7 @@ void Mesh::readOBJ(const char* obj) {
 
 	FILE* f;
 	errno_t err;
-	err = fopen_s(&f, obj, "r");
+	err = fopen_s(&f, (std::string("models/") + std::string(obj)).c_str(), "rb");
 
 	std::map<std::string, int> groupNames;
 	int curGroup = -1;
@@ -151,7 +151,7 @@ void Mesh::readOBJ(const char* obj) {
 			}
 		}
 		if (line[0] == 'm' && line[1] == 't' && line[2] == 'l') {
-			sscanf_s(line, "mtllib %[^\n]\n", matfile, 255);
+			sscanf_s(line, "mtllib %[^\n\r]\r\n", matfile, 255);
 		}
 		if (line[0] == 'v' && line[1] == ' ') {
 			Vector3 vec;
@@ -308,7 +308,20 @@ void Mesh::readOBJ(const char* obj) {
 
 	}
 	fclose(f);
-
+	err = fopen_s(&f, (std::string("models/") + std::string(matfile)).c_str(), "r" );
+	std::string toto = (std::string("models/") + std::string(matfile));
+	while (!feof(f))
+	{
+		char line[255];
+		fgets(line, 255, f);
+		if (line[0] == 'm' && line[4] == 'K' && line[5] == 'd')
+		{
+			char texturefile[255];
+			sscanf_s(line, "map_Kd %100s\r\n", texturefile, 255);
+			add_texture((std::string("models/textures/") + std::string(texturefile)).c_str());
+		}
+	}
+	fclose(f);
 }
 
 
@@ -354,6 +367,7 @@ void Mesh::_GetIntersectionRec(const Ray& ray, IntersectionObject& intersection,
 	if (p_node->left_child == NULL)
 	{
 		IntersectionObject local_intersection;
+		Vector3 UV;
 		for (int i_triangle = p_node->i_first; i_triangle < p_node->i_first + p_node->nb_triangle; ++i_triangle)
 		{
 			double alpha, beta, gamma;
@@ -364,11 +378,21 @@ void Mesh::_GetIntersectionRec(const Ray& ray, IntersectionObject& intersection,
 				normals[indices[i_triangle].n[0]],
 				normals[indices[i_triangle].n[1]],
 				normals[indices[i_triangle].n[2]],
+				uvs[indices[i_triangle].uv[0]],
+				uvs[indices[i_triangle].uv[1]],
+				uvs[indices[i_triangle].uv[2]],
 				material);
-			tri.GetIntersection(ray, local_intersection);
+			tri.GetIntersectionUV(ray, local_intersection, UV);
 			if (local_intersection.b_intersect && (!intersection.b_intersect || local_intersection.t < intersection.t))
 			{
 				intersection = local_intersection;
+				int i_texture = indices[i_triangle].faceGroup;
+				int x((w[i_texture] - 1)*UV[0]);
+				int y((h[i_texture] - 1)*UV[1]);
+				double cr = (textures[i_texture][(y * w[i_texture] + x) * 3]) / 255.;
+				double cg = (textures[i_texture][(y * w[i_texture] + x) * 3 + 1]) / 255.;
+				double cb = (textures[i_texture][(y * w[i_texture] + x) * 3 + 2]) / 255.;
+				intersection.Color = Vector3(cr, cg, cb);
 			}
 		}
 	}
