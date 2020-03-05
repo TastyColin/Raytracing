@@ -16,8 +16,9 @@
 #include "Sphere.h"
 #include "Scene.h"
 #include "Mesh.h"
+#include "TexturedTriangle.h"
+#include "TexturedSphere.h"
 #include "constantes.h"
-
 
 void save_image(const char* filename, const unsigned char* tableau, int w, int h);
 
@@ -25,7 +26,7 @@ void save_image(const char* filename, const unsigned char* tableau, int w, int h
 int main()
 {
 	// Variables de tracé
-	const int NB_RAY = 10;					// Nb de rayons par pixel
+	const int NB_RAY = 1000;					// Nb de rayons par pixel
 	const bool b_anti_aliasing = true;		// Anti pixelisation
 
 	// Inialisation de la scène
@@ -34,10 +35,86 @@ int main()
 	const Vector3 Bleu(0, 0.7, 1);
 	const Vector3 Blanc(1, 1, 1);
 	const Vector3 Gris90(0.9, 0.9, 0.9);
-	const Vector3 Rouge(1, 0, 0.3);
+	const Vector3 Rouge(1, 0.35, 0.5);
 	const Vector3 Vert(0, 1, 0.3);
+	const Vector3 RosePale(1, 0.8, 0.9);
+	Material GlassMaterial{ Blanc, 0, false, true, 1.5 };
+	Material MirrorMaterial{ RosePale, 0, true, false, 1.5 };
+	Material RedMaterial{ Rouge, 0, false, false, 1.5, 0.4, 10000 };
+	Material BlueMaterial{ Bleu, 0, false, false, 1.5, 0.4, 500 };
 
 
+	// Initialisation de la scène
+	const Material WallMaterial{ Vector3(1., 1., 0.95) };
+	const Material TopMaterial{ Blanc };
+	double R = 60.;
+	const Vector3 PA(-R, -R, -R);
+	const Vector3 PB(R, -R, -R);
+	const Vector3 PC(-R, R, -R);
+	const Vector3 PD(R, R, -R);
+	const Vector3 PE(-R, -R, R);
+	const Vector3 PF(R, -R, R);
+	const Vector3 PG(-R, R, R);
+	const Vector3 PH(R, R, R);
+
+	// Ajout des murs
+		// Avant et arrière
+	Triangle TB1(PA, PB, PD, WallMaterial);
+	Triangle TB2(PA, PD, PC, WallMaterial);
+	scene.AddObject(TB1);
+	scene.AddObject(TB2);
+
+	Triangle TF1(PE, PH, PF, WallMaterial);
+	Triangle TF2(PE, PG, PH, WallMaterial);
+	scene.AddObject(TF1);
+	scene.AddObject(TF2);
+
+		// Droite et gauche
+	Triangle TD1(PF, PH, PD, WallMaterial);
+	Triangle TD2(PF, PD, PB, WallMaterial);
+	scene.AddObject(TD1);
+	scene.AddObject(TD2);
+
+	Triangle TG1(PE, PC, PG, WallMaterial);
+	Triangle TG2(PE, PA, PC, WallMaterial);
+	scene.AddObject(TG1);
+	scene.AddObject(TG2);
+
+		// Sol et plafond
+	TexturedTriangle TBottom1(PA, PF, PB, WallMaterial, 10);
+	TexturedTriangle TBottom2(PA, PE, PF, WallMaterial, 10);
+	scene.AddObject(TBottom1);
+	scene.AddObject(TBottom2);
+
+	TexturedTriangle TTop1(PC, PD, PG, TopMaterial, 40);
+	TexturedTriangle TTop2(PG, PD, PH, TopMaterial, 40);
+	scene.AddObject(TTop1);
+	scene.AddObject(TTop2);
+
+		// Miroirs
+	const Vector3 MirrorA(0, -R, -R);
+	const Vector3 MirrorB(-R, 0, -R);
+	const Vector3 MirrorC(-R, -R, -R/2);
+
+	Triangle TMirror(MirrorA, MirrorB, MirrorC, MirrorMaterial);
+	scene.AddObject(TMirror);
+
+	const Vector3 Mirror2A(0, -R, -R);
+	const Vector3 Mirror2B(R, 0, -R);
+	const Vector3 Mirror2C(R, -R, -R / 2);
+	Triangle TMirror2(Mirror2A, Mirror2C, Mirror2B, MirrorMaterial);
+	scene.AddObject(TMirror2);
+
+		// Sphere
+	const Vector3 O1(0., -20., -15.);
+	TexturedSphere Sph1(O1, 15, BlueMaterial, "earth.bmp");
+	scene.AddObject(Sph1);
+
+	const Vector3 O2(R/2, -R+5, -25);
+	Sphere Sph2 = Sphere(O2, 5, RedMaterial);
+	scene.AddObject(Sph2);
+
+	/*
 	const Material RightMaterial{ Vector3(1,0.2,0.8) };
 	const Material LeftMaterial{ Vector3(1, 0, 0) };
 	const Material UpMaterial{ Vector3(0.2,0.8,1) };
@@ -58,64 +135,63 @@ int main()
 	scene.AddObject(WallBottom);
 	scene.AddObject(WallFront);
 	scene.AddObject(WallBack);
+
+	// Sphères
+
+	const Vector3 O1(0, 0, 0);
+	const Vector3 O2(40, 0, -50);
+	Material BlueMaterial{ Bleu, 0, false, false, 1.5, 0.8, 10000 };
+	Material RedMaterial{ Rouge, 0, false, false, 1.5, 0.4, 10000 };
+	Material GreenMaterial{ Vert, 0, false, false, 1.5, 0, 10000 };
+	Material WhiteMaterial{ Blanc, 0, false, false, 1.5, 0., 100 };
+	Material GlassMaterial{ Blanc, 0, false, true, 1.5 };
+	Material MirrorMaterial{ Blanc, 0, true, false, 1.5 };
+
+	Sphere Sph1(O1, 10, BlueMaterial);
+	Sphere Sph2 = Sphere(O2, 5, RedMaterial);
+	scene.AddObject(Sph1);					// Ajout des sphères à la scène
+	scene.AddObject(Sph2);
+	const Vector3 C(20, 40, -25);
+	Triangle triangle(O1, O2, C, GreenMaterial);
+	scene.AddObject(triangle);
+
+	Mesh g1("Beautiful Girl.obj", 50, Vector3(0, -60, -60), WhiteMaterial);
+	//scene.AddObject(g1);
+	*/
 	
 
+
 		// Caméra
-	const Vector3 O_camera(0, 0, 55);		// Position de la caméra
+	const Vector3 O_camera(0, -10, 59);		// Position de la caméra
 	double fov = 60. * PI / 180.;			// Champs de vue (60°)
 	const int W = 512;						// Largeur (en pixels)
 	const int H = 512;						// Hauteur (en pixels)
-	const double ouverture = 5.;			// largeur de l'ouverture du diaphragme
-	const double focus_distance = 115;		// distance de mise au point
+	const double ouverture = 0.5;			// largeur de l'ouverture du diaphragme
+	const double focus_distance = 75;		// distance de mise au point
 	std::vector<unsigned char> img(W*H * 3, 0);	// initialisation du tableau de l'image
 
 		// Lumière
-	const Vector3 L(-15, 10, 40);			// Position de la lumière
+	const Vector3 L(-15, -20, 40);			// Position de la lumière
 	const Vector3 color_light = Blanc;		// Couleur
-	const double R_light = 1;
+	const double R_light = 2;
 	const double I_light = powf(2, 29);		// Puissance de la lumière (2^28)
 	Material LightMaterial{ Blanc, 1 };
 	Sphere light_sph(L, R_light, LightMaterial);
 	scene.SetLight(light_sph);				// Ajout des sphères à la scène
-		// Sphères
-	const Vector3 O1(0, 0, 0);
-	const Vector3 O2(40, 0, -50);
-	Material BlueMaterial{ Bleu, 0, false, false, 1.5 };
-	Material RedMaterial{ Rouge, 0, false, false, 1.5 };
-	Material GreenMaterial{ Vert, 0, false, false, 1.5 };
-	Material WhiteMaterial{ Blanc, 0, false, false, 1.5 };
-	Material GlassMaterial{ Blanc, 0, false, true, 1.5 };
-	Material MirrorMaterial{ Blanc, 0, true, false, 1.5 };
-
-	/*Sphere Sph1(O1, 10, BleuMaterial);
-	Sphere Sph2 = Sphere(O2, 5, RougeMaterial);
-	scene.AddObject(Sph1);					// Ajout des sphères à la scène
-	scene.AddObject(Sph2);
-	Triangle triangle(O1, O2, Vector3(20, 40, -25), VertMaterial);
-	scene.AddObject(triangle);*/
-
-	Mesh g1("Beautiful Girl.obj", 50, Vector3(0, -60, -60), WhiteMaterial);
-	//Mesh g2("girl.obj", 30, Vector3(40, -60, -80), RougeMaterial);
-	scene.AddObject(g1);
-	//scene.AddObject(g2);
-
-	// Déclaration des variables
-	double dx = 0;
-	double dy = 0;
 	
-
 #pragma omp parallel for
-	for (int i = 0; i < W; i++)
+	for (int i = 0; i < H; i++)
 	{
+		// Déclaration des variables
 		Vector3 ray_direction, I_pixel, O_ray, destination;
 		Ray light_ray;
 		Ray shadow_ray;
 		IntersectionScene light_intersection;
-		IntersectionScene shadow_intersection;
-		for (int j = 0; j < H; j++)
+		for (int j = 0; j < W; j++)
 		{
 			I_pixel.Reset();
-			
+			double dx = 0;
+			double dy = 0;
 			for (int k_ray = 0; k_ray < NB_RAY; ++k_ray)
 			{
 				if (b_anti_aliasing) my_random_gaussian(dx, dy, 0.25);
@@ -145,17 +221,19 @@ int main()
 
 				scene.GetIntersection(light_ray, light_intersection);
 				I_pixel += light_intersection.ColorPixel;
+					
+
 			}
 			for (int k = 0; k < 3; ++k)
 			{
 				I_pixel[k] = pow(I_pixel[k]* I_light / NB_RAY, 0.45);
 				I_pixel[k] = fmin(255, I_pixel[k]);
 			}
-
-			for (int k = 0; k < 3; k++)
+			for (int k = 0; k < 3; ++k)
 			{
 				img[(i*W + j) * 3 + k] = int(I_pixel[k]);
 			}
+
 
 		}
 	}

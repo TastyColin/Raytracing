@@ -1,0 +1,1301 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.5)  5 MAR 2020 13:49
+entering extended mode
+**./Rapport_RayTracing.tex
+(Rapport_RayTracing.tex
+LaTeX2e <2018-12-01>
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\report.cls"
+Document Class: report 2018/09/03 v1.4i Standard LaTeX document class
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
+File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+) ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.s
+ty"
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.sty
+"
+Package: amstext 2000/06/29 v2.01 AMS text
+ ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
+"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen103
+))
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+) ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
+y"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks17
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks18
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperref.s
+ty"
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobsub-h
+yperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobsub-g
+eneric.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.sty
+"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.s
+ty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\auxhook.st
+y"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.
+sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen112
+\Hy@linkcounter=\count101
+\Hy@pagecounter=\count102
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.def
+"
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count103
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/00miktex\hyperref.c
+fg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4772.
+\c@Hy@tempcnt=\count104
+ ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen113
+\Fld@menulength=\count105
+\Field@Width=\dimen114
+\Fld@charsize=\dimen115
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing OFF on input line 6395.
+Package hyperref Info: Link coloring OFF on input line 6400.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count106
+\c@Item=\count107
+\c@Hfootnote=\count108
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdftex.de
+f"
+File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
+\Fld@listcount=\count109
+\c@bookmark@seq@number=\count110
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\rerunfilec
+heck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip46
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/minitoc\minitoc.sty
+"
+Package: minitoc 2018/07/12 v62 Package minitoc
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/minitoc\mtcmess.sty
+"
+Package: mtcmess 2006/03/14
+)
+Package minitoc Info: I0001
+(minitoc)             *** minitoc package, version 62 ***.
+\tf@mtc=\write3
+\mtcindent=\skip47
+\mtcskipamount=\skip48
+Package minitoc Info: I0005
+(minitoc)             compatible with hyperref.
+Package minitoc Info: I0023
+(minitoc)             part level macros available.
+Package minitoc Info: I0003
+(minitoc)             chapter level macros available.
+\mtc@toks=\toks22
+\mtc@strutbox=\box29
+\mtc@hstrutbox=\box30
+Package minitoc Info: I0002
+(minitoc)             Autoconfiguration of extensions.
+\openout3 = `Rapport_RayTracing.mtc0'.
+
+\openout3 = `Rapport_RayTracing.mtc'.
+
+ (Rapport_RayTracing.mtc0)
+Package minitoc Info: I0012
+(minitoc)             Long extensions (Unix-like) will be used.
+Package minitoc Info: I0031
+(minitoc)             ==> this version is configured for UNIX-like 
+(minitoc)                 (long extensions) file names.
+\openout3 = `Rapport_RayTracing.mtc'.
+
+\openout3 = `Rapport_RayTracing.mtc0'.
+
+\c@mtc=\count111
+\c@minitocdepth=\count112
+\c@ptc=\count113
+\c@parttocdepth=\count114
+\ptcindent=\skip49
+Package minitoc Info: I0010
+(minitoc)             The english language is selected.
+(minitoc)              on input line 4910.
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/minitoc\english.mld
+"
+File: english.mld 2006/01/13
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/minitoc\english.mld
+"
+File: english.mld 2006/01/13
+))
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty"
+Package: babel 2019/04/01 3.28 The Babel package
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.def"
+File: switch.def 2019/04/01 3.28 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel-french\fren
+ch.ldf"
+Language: french 2019/03/30 v3.5e French support from the babel system
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
+File: babel.def 2019/04/01 3.28 Babel common definitions
+\babel@savecnt=\count115
+\U@D=\dimen116
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.de
+f")
+\bbl@dirlevel=\count116
+)
+\l@acadian = a dialect from \language\l@french 
+\FB@nonchar=\count117
+Package babel Info: Making : an active character on input line 414.
+Package babel Info: Making ; an active character on input line 415.
+Package babel Info: Making ! an active character on input line 416.
+Package babel Info: Making ? an active character on input line 417.
+\FBguill@level=\count118
+\FBold@everypar=\toks23
+\FB@Mht=\dimen117
+\mc@charclass=\count119
+\mc@charfam=\count120
+\mc@charslot=\count121
+\std@mcc=\count122
+\dec@mcc=\count123
+\c@FBcaption@count=\count124
+\listindentFB=\dimen118
+\descindentFB=\dimen119
+\labelindentFB=\dimen120
+\labelwidthFB=\dimen121
+\leftmarginFB=\dimen122
+\parindentFFN=\dimen123
+\FBfnindent=\dimen124
+))
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/carlisle\scalefnt.s
+ty") ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.st
+y"
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen125
+\ar@mcellbox=\box31
+\extrarowheight=\dimen126
+\NC@list=\toks24
+\extratabsurround=\skip50
+\backup@length=\skip51
+\ar@cellbox=\box32
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multirow.s
+ty"
+Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
+\multirow@colwidth=\skip52
+\multirow@cntb=\count125
+\multirow@dima=\skip53
+\bigstrutjot=\dimen127
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/makecell\makecell.s
+ty"
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen128
+\c@nlinenum=\count126
+\TeXr@lab=\toks25
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fncychap\fncychap.s
+ty"
+Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
+\RW=\skip54
+\mylen=\skip55
+\myhi=\skip56
+\px=\skip57
+\py=\skip58
+\pyy=\skip59
+\pxx=\skip60
+\backskip=\skip61
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/glossaries/base\glo
+ssaries.sty"
+Package: glossaries 2019/01/06 v4.42 (NLCT)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.sty
+"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.t
+ex"
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils.
+tex"
+\XKV@toks=\toks26
+\XKV@tempa@toks=\toks27
+)
+\XKV@depth=\count127
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mfirstuc\mfirstuc.s
+ty"
+Package: mfirstuc 2017/11/14 v2.06 (NLCT)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.s
+ty"
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count128
+)
+\@glsmfirst=\toks28
+\@glsmrest=\toks29
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/textcase\textcase.s
+ty"
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+) ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xfor\xfor.sty"
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/datatool\datatool-b
+ase.sty"
+Package: datatool-base 2018/12/07 v2.31 (NLCT)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/substr\substr.sty"
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count129
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/datatool\datatool-f
+p.sty"
+Package: datatool-fp 2018/12/07 v2.31 (NLCT)
+ ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp.sty"
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\defpattern.sty"
+Package: defpattern 1994/10/12
+\actioncount=\count130
+) ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-basic.sty"
+Package: fp-basic 1996/05/13
+\FP@xs=\count131
+\FP@xia=\count132
+\FP@xib=\count133
+\FP@xfa=\count134
+\FP@xfb=\count135
+\FP@rega=\count136
+\FP@regb=\count137
+\FP@regs=\count138
+\FP@times=\count139
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-addons.sty"
+Package: fp-addons 1995/03/15
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-snap.sty"
+Package: fp-snap 1995/04/05
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-exp.sty"
+Package: fp-exp 1995/04/03
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-trigo.sty"
+Package: fp-trigo 1995/04/14
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-pas.sty"
+Package: fp-pas 1994/08/29
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-random.sty"
+Package: fp-random 1995/02/23
+\FPseed=\count140
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-eqn.sty"
+Package: fp-eqn 1995/04/03
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-upn.sty"
+Package: fp-upn 1996/10/21
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fp\fp-eval.sty"
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks30
+\@dtl@tmpcount=\count141
+\dtl@tmplength=\skip62
+\dtl@sortresult=\count142
+\@dtl@numgrpsepcount=\count143
+\@dtl@datatype=\count144
+\dtl@codeA=\count145
+\dtl@codeB=\count146
+\@dtl@foreach@level=\count147
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/glossaries/base\glo
+ssaries-compatible-307.sty"
+Package: glossaries-compatible-307 2019/01/06 v4.42 (NLCT)
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tracklang\tracklang
+.sty"
+Package: tracklang 2018/05/13 v1.3.6 (NLCT) Track Languages
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/tracklang\trackla
+ng.tex"))
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\translat
+or.sty"
+Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/glossaries-french\g
+lossaries-french.ldf"
+File: glossaries-french.ldf 2016/12/12 v1.1
+)
+\gls@level=\count148
+\@gls@tmpb=\toks31
+\gls@tmplen=\skip63
+\glskeylisttok=\toks32
+\glslabeltok=\toks33
+\glsshorttok=\toks34
+\glslongtok=\toks35
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/glossaries/styles\g
+lossary-hypernav.sty"
+Package: glossary-hypernav 2019/01/06 v4.42 (NLCT)
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/glossaries/styles\g
+lossary-list.sty"
+Package: glossary-list 2019/01/06 v4.42 (NLCT)
+\glslistdottedwidth=\skip64
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/glossaries/styles\g
+lossary-long.sty"
+Package: glossary-long 2019/01/06 v4.42 (NLCT)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longtable.sty
+"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+\LTleft=\skip65
+\LTright=\skip66
+\LTpre=\skip67
+\LTpost=\skip68
+\LTchunksize=\count149
+\LTcapwidth=\dimen129
+\LT@head=\box33
+\LT@firsthead=\box34
+\LT@foot=\box35
+\LT@lastfoot=\box36
+\LT@cols=\count150
+\LT@rows=\count151
+\c@LT@tables=\count152
+\c@LT@chunks=\count153
+\LT@p@ftn=\toks36
+)
+\glsdescwidth=\skip69
+\glspagelistwidth=\skip70
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/glossaries/styles\g
+lossary-super.sty"
+Package: glossary-super 2019/01/06 v4.42 (NLCT)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/supertabular\supert
+abular.sty"
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count154
+\ST@wd=\dimen130
+\ST@rightskip=\skip71
+\ST@leftskip=\skip72
+\ST@parfillskip=\skip73
+\ST@pageleft=\dimen131
+\ST@headht=\dimen132
+\ST@tailht=\dimen133
+\ST@pagesofar=\dimen134
+\ST@pboxht=\dimen135
+\ST@lineht=\dimen136
+\ST@stretchht=\dimen137
+\ST@prevht=\dimen138
+\ST@toadd=\dimen139
+\ST@dimen=\dimen140
+\ST@pbox=\box37
+))
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/glossaries/styles\g
+lossary-tree.sty"
+Package: glossary-tree 2019/01/06 v4.42 (NLCT)
+\glstreeindent=\skip74
+))
+\glswrite=\write4
+\glo@main@file=\write5
+\openout5 = `Rapport_RayTracing.glo'.
+
+Package glossaries Info: Writing glossary file Rapport_RayTracing.glo on input 
+line 18.
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.s
+ty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+\Gm@cnth=\count155
+\Gm@cntv=\count156
+\c@Gm@tempcnt=\count157
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks37
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.c
+fg"))
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.s
+ty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.st
+y"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textcomp.sty"
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1enc.dfu"
+File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.s
+ty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.s
+ty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graphi
+cs.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex
+.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.sty
+"
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.st
+y"
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen151
+\captionmargin@=\dimen152
+\captionwidth=\dimen153
+\caption@tempdima=\dimen154
+\caption@indent=\dimen155
+\caption@parindent=\dimen156
+\caption@hangindent=\dimen157
+)
+\c@caption@flags=\count158
+\c@ContinuedFloat=\count159
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\ltcaption.s
+ty"
+Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
+)
+Package caption Info: supertabular package is loaded.
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcaption.
+sty"
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+\c@subfigure=\count160
+\c@subtable=\count161
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count162
+\float@exts=\toks38
+\float@box=\box38
+\@float@everytoks=\toks39
+\@floatcapt=\box39
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.s
+ty"
+\lst@mode=\count163
+\lst@gtempboxa=\box40
+\lst@token=\toks40
+\lst@length=\count164
+\lst@currlwidth=\dimen158
+\lst@column=\count165
+\lst@pos=\count166
+\lst@lostspace=\dimen159
+\lst@width=\dimen160
+\lst@newlines=\count167
+\lst@lineno=\count168
+\lst@maxwidth=\dimen161
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.st
+y"
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count169
+\lst@skipnumbers=\count170
+\lst@framebox=\box41
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.c
+fg"
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color.
+cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+Package color Info: Redefining color reddigits on input line 57.
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.s
+ty"
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip75
+\f@nch@O@elh=\skip76
+\f@nch@O@erh=\skip77
+\f@nch@O@olh=\skip78
+\f@nch@O@orh=\skip79
+\f@nch@O@elf=\skip80
+\f@nch@O@erf=\skip81
+\f@nch@O@olf=\skip82
+\f@nch@O@orf=\skip83
+) (Rapport_RayTracing.aux)
+\openout1 = `Rapport_RayTracing.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 108.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 108.
+
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 108.
+\AtBeginShipoutBox=\box42
+Package hyperref Info: Link coloring OFF on input line 108.
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.st
+y"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\gettitle
+string.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count171
+)
+LaTeX Info: Redefining \ref on input line 108.
+LaTeX Info: Redefining \pageref on input line 108.
+LaTeX Info: Redefining \nameref on input line 108.
+ (Rapport_RayTracing.out) (Rapport_RayTracing.out)
+\@outlinefile=\write6
+\openout6 = `Rapport_RayTracing.out'.
+
+Package minitoc(hints) Info: I0049
+(minitoc(hints))             ==> You requested the hints option. 
+(minitoc(hints))             Some hints are eventually given below.
+
+
+Package minitoc(hints) Warning: W0030
+(minitoc(hints))                --- The \part command is altered 
+(minitoc(hints))                after minitoc.
+
+
+Package minitoc(hints) Warning: W0023
+(minitoc(hints))                --- It may be the consequence 
+(minitoc(hints))                of loading the ``hyperref'' package.
+
+
+Package minitoc(hints) Warning: W0028
+(minitoc(hints))                --- The \chapter command is altered 
+(minitoc(hints))                after minitoc.
+
+
+Package minitoc(hints) Warning: W0023
+(minitoc(hints))                --- It may be the consequence 
+(minitoc(hints))                of loading the ``hyperref'' package.
+
+LaTeX Info: Redefining \degres on input line 108.
+LaTeX Info: Redefining \dots on input line 108.
+LaTeX Info: Redefining \up on input line 108.
+
+Package french.ldf Warning: OT1 encoding should not be used for French.
+(french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
+(french.ldf)                of your document; reported on input line 108.
+
+(Rapport_RayTracing.glsdefs)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=85.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
+f.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count172
+\scratchdimen=\dimen162
+\scratchbox=\box43
+\nofMPsegments=\count173
+\nofMParguments=\count174
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count175
+\MPscratchDim=\dimen163
+\MPnumerator=\count176
+\makeMPintoPDFobject=\count177
+\everyMPtoPDFconversion=\toks42
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-b
+ase.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty
+"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count178
+<./Images/centrale_lyon.png, id=83, 963.6pt x 165.61874pt>
+File: ./Images/centrale_lyon.png Graphic file (type png)
+<use ./Images/centrale_lyon.png>
+Package pdftex.def Info: ./Images/centrale_lyon.png  used on input line 123.
+(pdftex.def)             Requested size: 241.84843pt x 41.56631pt.
+<./Images/illustration.png, id=85, 513.92pt x 513.92pt>
+File: ./Images/illustration.png Graphic file (type png)
+<use ./Images/illustration.png>
+Package pdftex.def Info: ./Images/illustration.png  used on input line 139.
+(pdftex.def)             Requested size: 386.95897pt x 386.96819pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 146.
+ ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 146.
+ ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+\openout4 = `Rapport_RayTracing.ist'.
+
+{C:/Users/Asus/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Images/cen
+trale_lyon.png> <./Images/illustration.png (PNG copy)>]
+<./Images/be0.png, id=99, 513.92pt x 513.92pt>
+File: ./Images/be0.png Graphic file (type png)
+<use ./Images/be0.png>
+Package pdftex.def Info: ./Images/be0.png  used on input line 164.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 14.49998pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[2 <./Images/be0.png (PNG copy)>]
+<./Images/be1_01.png, id=107, 1027.84pt x 1027.84pt>
+File: ./Images/be1_01.png Graphic file (type png)
+<use ./Images/be1_01.png>
+Package pdftex.def Info: ./Images/be1_01.png  used on input line 182.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be1_02.png, id=108, 1027.84pt x 1027.84pt>
+File: ./Images/be1_02.png Graphic file (type png)
+<use ./Images/be1_02.png>
+Package pdftex.def Info: ./Images/be1_02.png  used on input line 188.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be2_01.png, id=115, 1027.84pt x 1027.84pt>
+File: ./Images/be2_01.png Graphic file (type png)
+<use ./Images/be2_01.png>
+Package pdftex.def Info: ./Images/be2_01.png  used on input line 220.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be2_02.png, id=116, 1027.84pt x 1027.84pt>
+File: ./Images/be2_02.png Graphic file (type png)
+<use ./Images/be2_02.png>
+Package pdftex.def Info: ./Images/be2_02.png  used on input line 226.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+ [3 <./Images/be1_01.png (PNG copy)> <./Images/be1_02.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
+Make it at least 15.71667pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[4 <./Images/be2_01.png (PNG copy)> <./Images/be2_02.png (PNG copy)>]
+<./Images/be2_03.png, id=136, 1027.84pt x 1027.84pt>
+File: ./Images/be2_03.png Graphic file (type png)
+<use ./Images/be2_03.png>
+Package pdftex.def Info: ./Images/be2_03.png  used on input line 245.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be2_04.png, id=139, 1027.84pt x 1027.84pt>
+File: ./Images/be2_04.png Graphic file (type png)
+<use ./Images/be2_04.png>
+Package pdftex.def Info: ./Images/be2_04.png  used on input line 259.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be2_05.png, id=140, 1027.84pt x 1027.84pt>
+File: ./Images/be2_05.png Graphic file (type png)
+<use ./Images/be2_05.png>
+Package pdftex.def Info: ./Images/be2_05.png  used on input line 265.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./Images/be2_03.png (PNG copy)>]
+<./Images/be2_07.png, id=153, 1027.84pt x 1027.84pt>
+File: ./Images/be2_07.png Graphic file (type png)
+<use ./Images/be2_07.png>
+Package pdftex.def Info: ./Images/be2_07.png  used on input line 282.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be2_08.png, id=154, 1027.84pt x 1027.84pt>
+File: ./Images/be2_08.png Graphic file (type png)
+<use ./Images/be2_08.png>
+Package pdftex.def Info: ./Images/be2_08.png  used on input line 288.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+ [6 <./Images/be2_04.png (PNG copy)> <./Images/be2_05.png (PNG copy)> <./Images
+/be2_07.png (PNG copy)> <./Images/be2_08.png (PNG copy)>]
+Overfull \hbox (7.51045pt too wide) in paragraph at lines 299--300
+[]\OT1/cmr/m/n/12 Afin d'eviter d'avoir les zones om-bragees to-ta-le-ment no
+ires, l'eclairage in-di-rect est implemente.
+ []
+
+<./Images/be3_02_1.png, id=161, 1027.84pt x 1027.84pt>
+File: ./Images/be3_02_1.png Graphic file (type png)
+<use ./Images/be3_02_1.png>
+Package pdftex.def Info: ./Images/be3_02_1.png  used on input line 305.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be3_02_10.png, id=162, 1027.84pt x 1027.84pt>
+File: ./Images/be3_02_10.png Graphic file (type png)
+<use ./Images/be3_02_10.png>
+Package pdftex.def Info: ./Images/be3_02_10.png  used on input line 311.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be3_02_100.png, id=163, 1027.84pt x 1027.84pt>
+File: ./Images/be3_02_100.png Graphic file (type png)
+<use ./Images/be3_02_100.png>
+Package pdftex.def Info: ./Images/be3_02_100.png  used on input line 317.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+<./Images/be3_02_1000.png, id=164, 1027.84pt x 1027.84pt>
+File: ./Images/be3_02_1000.png Graphic file (type png)
+<use ./Images/be3_02_1000.png>
+Package pdftex.def Info: ./Images/be3_02_1000.png  used on input line 323.
+(pdftex.def)             Requested size: 217.66211pt x 217.65637pt.
+[7 <./Images/be3_02_1.png (PNG copy)> <./Images/be3_02_10.png (PNG copy)> <./Im
+ages/be3_02_100.png (PNG copy)> <./Images/be3_02_1000.png (PNG copy)>]
+<./Images/be3_02_1000_1.png, id=173, 91.34125pt x 84.315pt>
+File: ./Images/be3_02_1000_1.png Graphic file (type png)
+<use ./Images/be3_02_1000_1.png>
+Package pdftex.def Info: ./Images/be3_02_1000_1.png  used on input line 341.
+(pdftex.def)             Requested size: 217.66211pt x 200.94617pt.
+<./Images/be3_03_1000_1.png, id=174, 91.34125pt x 84.315pt>
+File: ./Images/be3_03_1000_1.png Graphic file (type png)
+<use ./Images/be3_03_1000_1.png>
+Package pdftex.def Info: ./Images/be3_03_1000_1.png  used on input line 347.
+(pdftex.def)             Requested size: 217.66211pt x 200.94617pt.
+ [8 <./Images/be3_02_1000_1.png (PNG copy)> <./Images/be3_03_1000_1.png (PNG co
+py)>]
+<./Images/be4_01_1000_0.png, id=181, 513.92pt x 513.92pt>
+File: ./Images/be4_01_1000_0.png Graphic file (type png)
+<use ./Images/be4_01_1000_0.png>
+Package pdftex.def Info: ./Images/be4_01_1000_0.png  used on input line 364.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+<./Images/be4_01_1000_1.png, id=182, 513.92pt x 513.92pt>
+File: ./Images/be4_01_1000_1.png Graphic file (type png)
+<use ./Images/be4_01_1000_1.png>
+Package pdftex.def Info: ./Images/be4_01_1000_1.png  used on input line 370.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+<./Images/be4_01_1000_3.png, id=183, 513.92pt x 513.92pt>
+File: ./Images/be4_01_1000_3.png Graphic file (type png)
+<use ./Images/be4_01_1000_3.png>
+Package pdftex.def Info: ./Images/be4_01_1000_3.png  used on input line 376.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+<./Images/be4_01_1000_5.png, id=184, 513.92pt x 513.92pt>
+File: ./Images/be4_01_1000_5.png Graphic file (type png)
+<use ./Images/be4_01_1000_5.png>
+Package pdftex.def Info: ./Images/be4_01_1000_5.png  used on input line 382.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+<./Images/be4_02_1000_1_0.png, id=186, 513.92pt x 513.92pt>
+File: ./Images/be4_02_1000_1_0.png Graphic file (type png)
+<use ./Images/be4_02_1000_1_0.png>
+Package pdftex.def Info: ./Images/be4_02_1000_1_0.png  used on input line 398.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+<./Images/be4_02_1000_1_5.png, id=187, 513.92pt x 513.92pt>
+File: ./Images/be4_02_1000_1_5.png Graphic file (type png)
+<use ./Images/be4_02_1000_1_5.png>
+Package pdftex.def Info: ./Images/be4_02_1000_1_5.png  used on input line 404.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+
+[9 <./Images/be4_01_1000_0.png (PNG copy)> <./Images/be4_01_1000_1.png (PNG cop
+y)> <./Images/be4_01_1000_3.png (PNG copy)> <./Images/be4_01_1000_5.png (PNG co
+py)>] [10 <./Images/be4_02_1000_1_0.png (PNG copy)> <./Images/be4_02_1000_1_5.p
+ng (PNG copy)>]
+<./Images/be5_01_100R.png, id=201, 513.92pt x 513.92pt>
+File: ./Images/be5_01_100R.png Graphic file (type png)
+<use ./Images/be5_01_100R.png>
+Package pdftex.def Info: ./Images/be5_01_100R.png  used on input line 422.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+<./Images/be6_01_100R_5O_75s.png, id=202, 513.92pt x 513.92pt>
+File: ./Images/be6_01_100R_5O_75s.png Graphic file (type png)
+<use ./Images/be6_01_100R_5O_75s.png>
+Package pdftex.def Info: ./Images/be6_01_100R_5O_75s.png  used on input line 42
+8.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+File: ./Images/be6_01_100R_5O_75s.png Graphic file (type png)
+<use ./Images/be6_01_100R_5O_75s.png>
+Package pdftex.def Info: ./Images/be6_01_100R_5O_75s.png  used on input line 44
+2.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+<./Images/be6_02_100R_5O.png, id=206, 513.92pt x 513.92pt>
+File: ./Images/be6_02_100R_5O.png Graphic file (type png)
+<use ./Images/be6_02_100R_5O.png>
+Package pdftex.def Info: ./Images/be6_02_100R_5O.png  used on input line 448.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+ [11 <./Images/be5_01_100R.png (PNG copy)> <./Images/be6_01_100R_5O_75s.png (PN
+G copy)> <./Images/be6_02_100R_5O.png (PNG copy)>]
+<./Images/be7_01_100R_5O.png, id=215, 513.92pt x 513.92pt>
+File: ./Images/be7_01_100R_5O.png Graphic file (type png)
+<use ./Images/be7_01_100R_5O.png>
+Package pdftex.def Info: ./Images/be7_01_100R_5O.png  used on input line 469.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+<./Images/be7_03_1000R_5O_10000n.png, id=216, 513.92pt x 513.92pt>
+File: ./Images/be7_03_1000R_5O_10000n.png Graphic file (type png)
+<use ./Images/be7_03_1000R_5O_10000n.png>
+Package pdftex.def Info: ./Images/be7_03_1000R_5O_10000n.png  used on input lin
+e 475.
+(pdftex.def)             Requested size: 217.66211pt x 217.66422pt.
+ [12 <./Images/be7_01_100R_5O.png (PNG copy)> <./Images/be7_03_1000R_5O_10000n.
+png (PNG copy)>]
+File: ./Images/illustration.png Graphic file (type png)
+<use ./Images/illustration.png>
+Package pdftex.def Info: ./Images/illustration.png  used on input line 494.
+(pdftex.def)             Requested size: 386.95897pt x 386.96819pt.
+
+Underfull \vbox (badness 1762) has occurred while \output is active []
+
+ [13]
+[14]
+Overfull \hbox (5.84929pt too wide) in paragraph at lines 522--524
+[]\OT1/cmr/m/n/12 Personnellement, j'ai beau-coup apprecie ce cours, en par-t
+i-cu-lier le fait d'avoir tout implemente
+ []
+
+Package minitoc Info: I0009
+(minitoc)             Listing minitoc auxiliary files. 
+(minitoc)             Creating the Rapport_RayTracing.maf file.
+\openout3 = `Rapport_RayTracing.maf'.
+
+
+Package minitoc(hints) Warning: W0086
+(minitoc(hints))                The fncychap package should be 
+(minitoc(hints))                loaded BEFORE the minitoc package.
+
+
+Package minitoc(hints) Warning: W0033
+(minitoc(hints))                The caption package should be 
+(minitoc(hints))                loaded BEFORE the minitoc package.
+
+Package minitoc(hints) Info: I0053
+(minitoc(hints))             You have loaded the float package; 
+(minitoc(hints))             please be aware that the minitoc package 
+(minitoc(hints))             facilities can not be used for new types 
+(minitoc(hints))             of floats defined by the float package.
+
+Package minitoc(hints) Warning: W0024
+(minitoc(hints))                Some hints have been written 
+(minitoc(hints))                in the Rapport_RayTracing.log file.
+
+
+Package glossaries Warning: No \printglossary or \printglossaries found. 
+(Remove \makeglossaries if you don't want any glossaries.) 
+This document will not have a glossary.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 535.
+[15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 535.
+ (Rapport_RayTracing.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 535.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 535.
+Package rerunfilecheck Info: File `Rapport_RayTracing.out' has not changed.
+(rerunfilecheck)             Checksum: A6C51D76E7464CA9FBB37CE1AB6D9637;1524.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 535.
+ ) 
+Here is how much of TeX's memory you used:
+ 19201 strings out of 492945
+ 311223 string characters out of 3126697
+ 479219 words of memory out of 3000000
+ 22533 multiletter control sequences out of 15000+200000
+ 13835 words of font info for 51 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 53i,12n,92p,2001b,602s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmbx8.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Asus/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Asus/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Asus/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Us
+ers/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Asus/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Asus/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Asus/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
+/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.p
+fb>
+Output written on Rapport_RayTracing.pdf (15 pages, 12909622 bytes).
+PDF statistics:
+ 299 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 306 words of extra memory for PDF output out of 10000 (max. 10000000)
+

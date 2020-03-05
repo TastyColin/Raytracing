@@ -7,6 +7,10 @@ Triangle::Triangle(const Vector3& A, const Vector3& B, const Vector3& C, Materia
 {
 	N = prod(B - A, C - A);
 	N.normalization();
+	
+	uvA = Vector3(0., 0., 0.);
+	uvB = Vector3(0., 0., 0.);
+	uvC = Vector3(0., 0., 0.);
 	NA = N;
 	NB = N;
 	NC = N;
@@ -67,13 +71,13 @@ void Triangle::GetIntersection(const Ray& ray, IntersectionObject& intersection)
 	alpha = 1 - beta - gamma;
 
 	intersection.t = t;
-	/*if (dot(N, ray.Get_u()) > 0)
-		intersection.N = -N;
-	else*/
-	intersection.N = alpha * NA + beta * NB + gamma * NC;
-	intersection.N.normalization();
 	intersection.b_intersect = (beta > 0 && gamma > 0 && alpha > 0);
-	intersection.Color = material.color;
+	if (intersection.b_intersect)
+	{
+		intersection.N = alpha * NA + beta * NB + gamma * NC;
+		intersection.N.normalization();
+		intersection.Color = material.color;
+	}
 }
 
 

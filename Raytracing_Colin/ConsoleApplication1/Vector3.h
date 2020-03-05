@@ -1,5 +1,6 @@
 #pragma once
 #include <math.h>
+#include <iostream>
 
 class Vector3
 {
@@ -34,11 +35,14 @@ public:
 
 	void normalization(void);
 
+	void print(void) const;
+
 protected:
 	double coords[3];
 };
 
 double dot(const Vector3&, const Vector3&);
 Vector3 prod(const Vector3& U, const Vector3& V);
+Vector3 reflect(const Vector3& wi, const Vector3& N);
 
 

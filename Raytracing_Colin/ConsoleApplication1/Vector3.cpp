@@ -135,8 +135,14 @@ void Vector3::normalization()
 	double n = sqrt(norm_square());
 	if (n > 0)
 	{
-		for (int i = 0; i < 3; i++) { coords[i] /= n; }
+		*this /= n;
 	}
+}
+
+
+void Vector3::print(void) const
+{
+	printf("%lf, %lf, %lf\n", coords[0], coords[1], coords[2]);
 }
 
 double dot(const Vector3& v1, const Vector3& v2)
@@ -154,10 +160,17 @@ Vector3 prod(const Vector3& U, const Vector3& V)
 	Vector3 result;
 	for (int k = 0; k < 3; ++k)
 	{
-		result[k] = U[(k + 1)%3] * V[(k + 2) % 3] - U[(k + 2)%3] * V[(k + 1) % 3];
+		result[k] = U[(k + 1) % 3] * V[(k + 2) % 3] - U[(k + 2) % 3] * V[(k + 1) % 3];
 	}
 
 	return result;
+}
+
+
+Vector3 reflect(const Vector3& wi, const Vector3& N)
+{
+	Vector3 wr = wi - 2 * dot(wi, N)*N;
+	return wr;
 }
 
 

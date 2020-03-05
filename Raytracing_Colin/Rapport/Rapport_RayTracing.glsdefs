@@ -1,0 +1,360 @@
+\ifglsentryexists{MOSAIC}{}%
+{%
+\gls@defglossaryentry{MOSAIC}%
+{%
+name={\textit {MOSAIC}},%
+sort={\textit {MOSAIC}},%
+type={main},%
+first={\protect \textit {Multi-Object Spectrograph with Adaptive Image Correction} - Spectrographe multi-objets avec correction d'image adaptative \glsspace (\protect \textit {MOSAIC})},%
+firstplural={\protect \textit  {Multi-Object Spectrograph with Adaptive Image Correction} - Spectrographe multi-objets avec correction d'image adaptative \glsspace (\protect \textit  {MOSAIC})},%
+text={\protect \textit {MOSAIC}},%
+plural={\protect \textit  {MOSAIC}},%
+description={\textit {Multi-Object Spectrograph with Adaptive Image Correction} - Spectrographe multi-objets avec correction d'image adaptative},%
+descriptionplural={\textit {Multi-Object Spectrograph with Adaptive Image Correction} - Spectrographe multi-objets avec correction d'image adaptative \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {Multi-Object Spectrograph with Adaptive Image Correction} - Spectrographe multi-objets avec correction d'image adaptative},%
+longplural={\protect \textit {Multi-Object Spectrograph with Adaptive Image Correction} - Spectrographe multi-objets avec correction d'image adaptative},%
+short={\protect \textit {MOSAIC}},%
+shortplural={\protect \textit {MOSAIC}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{E-ELT}{}%
+{%
+\gls@defglossaryentry{E-ELT}%
+{%
+name={\textit {E-ELT}},%
+sort={\textit {E-ELT}},%
+type={main},%
+first={\protect \textit {European Extremely Large Telescope} - T\IeC {\'e}lescope g\IeC {\'e}ant europ\IeC {\'e}en\glsspace (\protect \textit {E-ELT})},%
+firstplural={\protect \textit  {European Extremely Large Telescope} - T\IeC {\'e}lescope g\IeC {\'e}ant europ\IeC {\'e}en\glsspace (\protect \textit  {E-ELT})},%
+text={\protect \textit {E-ELT}},%
+plural={\protect \textit  {E-ELT}},%
+description={\textit {European Extremely Large Telescope} - Télescope géant européen},%
+descriptionplural={\textit {European Extremely Large Telescope} - Télescope géant européen\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {European Extremely Large Telescope} - T\IeC {\'e}lescope g\IeC {\'e}ant europ\IeC {\'e}en},%
+longplural={\protect \textit {European Extremely Large Telescope} - T\IeC {\'e}lescope g\IeC {\'e}ant europ\IeC {\'e}en},%
+short={\protect \textit {E-ELT}},%
+shortplural={\protect \textit {E-ELT}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ELT}{}%
+{%
+\gls@defglossaryentry{ELT}%
+{%
+name={\textit {ELT}},%
+sort={\textit {ELT}},%
+type={main},%
+first={\protect \textit {Extremely Large Telescope} - T\IeC {\'e}lescope g\IeC {\'e}ant\glsspace (\protect \textit {ELT})},%
+firstplural={\protect \textit  {Extremely Large Telescope} - T\IeC {\'e}lescope g\IeC {\'e}ant\glsspace (\protect \textit  {ELT})},%
+text={\protect \textit {ELT}},%
+plural={\protect \textit  {ELT}},%
+description={\textit {Extremely Large Telescope} - Télescope géant},%
+descriptionplural={\textit {Extremely Large Telescope} - Télescope géant\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {Extremely Large Telescope} - T\IeC {\'e}lescope g\IeC {\'e}ant},%
+longplural={\protect \textit {Extremely Large Telescope} - T\IeC {\'e}lescope g\IeC {\'e}ant},%
+short={\protect \textit {ELT}},%
+shortplural={\protect \textit {ELT}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NASA}{}%
+{%
+\gls@defglossaryentry{NASA}%
+{%
+name={\textit {NASA}},%
+sort={\textit {NASA}},%
+type={main},%
+first={\protect \textit {National Aeronautics and Space Administration} - Administration nationale de l'a\IeC {\'e}ronautique et de l'espace\glsspace (\protect \textit {NASA})},%
+firstplural={\protect \textit  {National Aeronautics and Space Administration} - Administration nationale de l'a\IeC {\'e}ronautique et de l'espace\glsspace (\protect \textit  {NASA})},%
+text={\protect \textit {NASA}},%
+plural={\protect \textit  {NASA}},%
+description={\textit {National Aeronautics and Space Administration} - Administration nationale de l'aéronautique et de l'espace},%
+descriptionplural={\textit {National Aeronautics and Space Administration} - Administration nationale de l'aéronautique et de l'espace\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {National Aeronautics and Space Administration} - Administration nationale de l'a\IeC {\'e}ronautique et de l'espace},%
+longplural={\protect \textit {National Aeronautics and Space Administration} - Administration nationale de l'a\IeC {\'e}ronautique et de l'espace},%
+short={\protect \textit {NASA}},%
+shortplural={\protect \textit {NASA}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ESO}{}%
+{%
+\gls@defglossaryentry{ESO}%
+{%
+name={\textit {ESO}},%
+sort={\textit {ESO}},%
+type={main},%
+first={\protect \textit {European Southern Observatory} - Observatoire europ\IeC {\'e}en austral\glsspace (\protect \textit {ESO})},%
+firstplural={\protect \textit  {European Southern Observatory} - Observatoire europ\IeC {\'e}en austral\glsspace (\protect \textit  {ESO})},%
+text={\protect \textit {ESO}},%
+plural={\protect \textit  {ESO}},%
+description={\textit {European Southern Observatory} - Observatoire européen austral},%
+descriptionplural={\textit {European Southern Observatory} - Observatoire européen austral\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {European Southern Observatory} - Observatoire europ\IeC {\'e}en austral},%
+longplural={\protect \textit {European Southern Observatory} - Observatoire europ\IeC {\'e}en austral},%
+short={\protect \textit {ESO}},%
+shortplural={\protect \textit {ESO}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IRAP}{}%
+{%
+\gls@defglossaryentry{IRAP}%
+{%
+name={IRAP},%
+sort={IRAP},%
+type={main},%
+first={Institut de Recherche en Astrophysique et Plan\IeC {\'e}tologie\glsspace (IRAP)},%
+firstplural={Institut de Recherche en Astrophysique et Plan\IeC {\'e}tologie\glsspace (IRAP)},%
+text={IRAP},%
+plural={IRAP},%
+description={Institut de Recherche en Astrophysique et Planétologie},%
+descriptionplural={Institut de Recherche en Astrophysique et Planétologie\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Institut de Recherche en Astrophysique et Plan\IeC {\'e}tologie},%
+longplural={Institut de Recherche en Astrophysique et Plan\IeC {\'e}tologie},%
+short={IRAP},%
+shortplural={IRAP},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MICADO}{}%
+{%
+\gls@defglossaryentry{MICADO}%
+{%
+name={\textit {MICADO}},%
+sort={\textit {MICADO}},%
+type={main},%
+first={\protect \textit {Multi-AO Imaging Camera for Deep Observations} - Cam\IeC {\'e}ra d'imagerie multi-adaptative pour observations profondes\glsspace (\protect \textit {MICADO})},%
+firstplural={\protect \textit  {Multi-AO Imaging Camera for Deep Observations} - Cam\IeC {\'e}ra d'imagerie multi-adaptative pour observations profondes\glsspace (\protect \textit  {MICADO})},%
+text={\protect \textit {MICADO}},%
+plural={\protect \textit  {MICADO}},%
+description={\textit {Multi-AO Imaging Camera for Deep Observations} - Caméra d'imagerie multi-adaptative pour observations profondes},%
+descriptionplural={\textit {Multi-AO Imaging Camera for Deep Observations} - Caméra d'imagerie multi-adaptative pour observations profondes\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {Multi-AO Imaging Camera for Deep Observations} - Cam\IeC {\'e}ra d'imagerie multi-adaptative pour observations profondes},%
+longplural={\protect \textit {Multi-AO Imaging Camera for Deep Observations} - Cam\IeC {\'e}ra d'imagerie multi-adaptative pour observations profondes},%
+short={\protect \textit {MICADO}},%
+shortplural={\protect \textit {MICADO}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{HARMONI}{}%
+{%
+\gls@defglossaryentry{HARMONI}%
+{%
+name={\textit {HARMONI}},%
+sort={\textit {HARMONI}},%
+type={main},%
+first={\protect \textit {High Angular Resolution Monolithic Optical and Near-infrared Integral field spectrograph} - Spectrographe de champ optique monolithique \IeC {\`a} r\IeC {\'e}solution angulaire \IeC {\'e}lev\IeC {\'e}e et proche infrarouge\glsspace (\protect \textit {HARMONI})},%
+firstplural={\protect \textit  {High Angular Resolution Monolithic Optical and Near-infrared Integral field spectrograph} - Spectrographe de champ optique monolithique \IeC {\`a} r\IeC {\'e}solution angulaire \IeC {\'e}lev\IeC {\'e}e et proche infrarouge\glsspace (\protect \textit  {HARMONI})},%
+text={\protect \textit {HARMONI}},%
+plural={\protect \textit  {HARMONI}},%
+description={\textit {High Angular Resolution Monolithic Optical and Near-infrared Integral field spectrograph} - Spectrographe de champ optique monolithique à résolution angulaire élevée et proche infrarouge},%
+descriptionplural={\textit {High Angular Resolution Monolithic Optical and Near-infrared Integral field spectrograph} - Spectrographe de champ optique monolithique à résolution angulaire élevée et proche infrarouge\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {High Angular Resolution Monolithic Optical and Near-infrared Integral field spectrograph} - Spectrographe de champ optique monolithique \IeC {\`a} r\IeC {\'e}solution angulaire \IeC {\'e}lev\IeC {\'e}e et proche infrarouge},%
+longplural={\protect \textit {High Angular Resolution Monolithic Optical and Near-infrared Integral field spectrograph} - Spectrographe de champ optique monolithique \IeC {\`a} r\IeC {\'e}solution angulaire \IeC {\'e}lev\IeC {\'e}e et proche infrarouge},%
+short={\protect \textit {HARMONI}},%
+shortplural={\protect \textit {HARMONI}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4MOST}{}%
+{%
+\gls@defglossaryentry{4MOST}%
+{%
+name={\textit {4MOST}},%
+sort={\textit {4MOST}},%
+type={main},%
+first={\protect \textit {4-metre Multi-Object Spectroscopic Telescope} - T\IeC {\'e}lescope spectroscopique multi-objets de 4 m\IeC {\`e}tres\glsspace (\protect \textit {4MOST})},%
+firstplural={\protect \textit  {4-metre Multi-Object Spectroscopic Telescope} - T\IeC {\'e}lescope spectroscopique multi-objets de 4 m\IeC {\`e}tres\glsspace (\protect \textit  {4MOST})},%
+text={\protect \textit {4MOST}},%
+plural={\protect \textit  {4MOST}},%
+description={\textit {4-metre Multi-Object Spectroscopic Telescope} - Télescope spectroscopique multi-objets de 4 mètres},%
+descriptionplural={\textit {4-metre Multi-Object Spectroscopic Telescope} - Télescope spectroscopique multi-objets de 4 mètres\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {4-metre Multi-Object Spectroscopic Telescope} - T\IeC {\'e}lescope spectroscopique multi-objets de 4 m\IeC {\`e}tres},%
+longplural={\protect \textit {4-metre Multi-Object Spectroscopic Telescope} - T\IeC {\'e}lescope spectroscopique multi-objets de 4 m\IeC {\`e}tres},%
+short={\protect \textit {4MOST}},%
+shortplural={\protect \textit {4MOST}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{VIS-SPES}{}%
+{%
+\gls@defglossaryentry{VIS-SPES}%
+{%
+name={\textit {VIS-SPES}},%
+sort={\textit {VIS-SPES}},%
+type={main},%
+first={\protect \textit {VISible SPEctrographS} - SPEctrographes visibles\glsspace (\protect \textit {VIS-SPES})},%
+firstplural={\protect \textit  {VISible SPEctrographS} - SPEctrographes visibles\glsspace (\protect \textit  {VIS-SPES})},%
+text={\protect \textit {VIS-SPES}},%
+plural={\protect \textit  {VIS-SPES}},%
+description={\textit {VISible SPEctrographS} - SPEctrographes visibles},%
+descriptionplural={\textit {VISible SPEctrographS} - SPEctrographes visibles\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {VISible SPEctrographS} - SPEctrographes visibles},%
+longplural={\protect \textit {VISible SPEctrographS} - SPEctrographes visibles},%
+short={\protect \textit {VIS-SPES}},%
+shortplural={\protect \textit {VIS-SPES}},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SPECS}{}%
+{%
+\gls@defglossaryentry{SPECS}%
+{%
+name={SPECS},%
+sort={SPECS},%
+type={main},%
+first={Sp\IeC {\'e}cifications\glsspace (SPECS)},%
+firstplural={Sp\IeC {\'e}cifications\glsspace (SPECS)},%
+text={SPECS},%
+plural={SPECS},%
+description={Spécifications},%
+descriptionplural={Spécifications\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Sp\IeC {\'e}cifications},%
+longplural={Sp\IeC {\'e}cifications},%
+short={SPECS},%
+shortplural={SPECS},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FITS}{}%
+{%
+\gls@defglossaryentry{FITS}%
+{%
+name={\textit {FITS}},%
+sort={\textit {FITS}},%
+type={main},%
+first={\protect \textit {Flexible Image Transport System} - Syst\IeC {\`e}me de transport d'image flexible\glsspace (\protect \textit {FITS})},%
+firstplural={\protect \textit  {Flexible Image Transport System} - Syst\IeC {\`e}me de transport d'image flexible\glsspace (\protect \textit  {FITS})},%
+text={\protect \textit {FITS}},%
+plural={\protect \textit  {FITS}},%
+description={\textit {Flexible Image Transport System} - Système de transport d'image flexible},%
+descriptionplural={\textit {Flexible Image Transport System} - Système de transport d'image flexible\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit {Flexible Image Transport System} - Syst\IeC {\`e}me de transport d'image flexible},%
+longplural={\protect \textit {Flexible Image Transport System} - Syst\IeC {\`e}me de transport d'image flexible},%
+short={\protect \textit {FITS}},%
+shortplural={\protect \textit {FITS}},%
+counter={page},%
+parent={},%
+%
+}%
+}%

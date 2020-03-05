@@ -7,7 +7,6 @@
 #include <math.h>
 
 
-
 double my_random(void);
 void my_random_cos(double &x, double &y, double &z);
 Vector3 random_cos(const Vector3& N);

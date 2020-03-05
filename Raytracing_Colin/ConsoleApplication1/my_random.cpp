@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "my_random.h"
 
+
 std::default_random_engine generator[8];
 std::uniform_real_distribution<double> distribution(0.0, 1.0);
 
@@ -21,9 +22,10 @@ void my_random_lob(double &x, double &y, double &z, const double &n)
 	double r1, r2;
 	r1 = my_random();
 	r2 = my_random();
-	x = cos(2 * PI * r1) * sqrt(1 - std::pow(r2, 2/(n+1)));
-	y = sin(2 * PI * r1) * sqrt(1 - pow(r2, 2 / (n + 1)));
-	z = sqrt(pow(r2, 1 / (n + 1)));
+	double facteur = sqrt(1 - std::pow(r2, 2. / (n + 1)));
+	x = cos(2 * PI * r1) * facteur;
+	y = sin(2 * PI * r1) * facteur;
+	z = sqrt(pow(r2, 1. / (n + 1)));
 }
 
 Vector3 random_cos(const Vector3& N)

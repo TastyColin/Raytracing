@@ -19,8 +19,8 @@ struct Material
 	bool b_mirror = false;
 	bool b_transparency = false;
 	double material_index = 1;
-	double ks = 0.5;
-	double n = 1000;
+	double ks = 0.;
+	double n = 1000.;
 };
 
 class Object

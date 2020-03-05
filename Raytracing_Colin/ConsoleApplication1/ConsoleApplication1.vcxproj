@@ -164,6 +164,8 @@
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stb_image_write.h" />
+    <ClInclude Include="TexturedSphere.h" />
+    <ClInclude Include="TexturedTriangle.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vector3.h" />
   </ItemGroup>
@@ -182,6 +184,8 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="my_random.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="TexturedSphere.cpp" />
+    <ClCompile Include="TexturedTriangle.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
